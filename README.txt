@@ -16,3 +16,15 @@ Notes:
 - Uses the guidebook information from Unit 2208 Guidebook.
 - Uses guidebook location photos extracted from the PDF for dining, shopping, relax, attractions, tours, and nightlife.
 - Uses the Airbnb Royal Palm King Suite photos as the main property photo URLs, with guidebook photo fallbacks.
+
+
+V5 update:
+- Made every guide location card clickable.
+- Made address lines and Open Map / Open Website links clickable.
+- Added Google Maps links to the neighborhood essentials section.
+
+
+V6 update:
+- Reduced oversized relax cards to match the scale of the other location cards.
+- Hid left/right arrows on desktop for Tours & Sightseeing and Ice Cream; arrows still show on tablet and phone.
+- Enlarged and balanced the contact chips, especially the phone number chip, for more consistent sizing.
