@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Palm Beach Getaways | Royal Palm King Suite Guest Guide</title>
+<meta name="description" content="Palm Beach Getaways guest guide for The Royal Palm King Suite at Palm Beach Hotel Condominium.">
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+:root {
+  --teal:#06a9bd;
+  --deep:#045f6f;
+  --aqua:#8fe6ee;
+  --pink:#ff9bbc;
+  --coral:#f58c80;
+  --sand:#fffaf4;
+  --ink:#4f5e74;
+  --card:#ffffffee;
+  --shadow:0 22px 48px rgba(14,53,66,.13);
+  --ring:1px solid rgba(6,169,189,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(143,230,238,.35), transparent 28%),
+    radial-gradient(circle at top right, rgba(255,155,188,.22), transparent 25%),
+    linear-gradient(180deg,#fffdf9,#fffaf4 58%,#eafbfd);
+  min-height:100vh;
+}
+body::after{
+  content:""; position:fixed; left:0;right:0;bottom:0;height:170px;
+  background:linear-gradient(180deg,rgba(234,251,253,0),rgba(209,243,248,.72));
+  pointer-events:none; z-index:-1;
+}
+h1,h2,h3{font-family:Georgia, 'Times New Roman', serif;color:var(--deep);margin:0;line-height:.98}
+h1{font-size:clamp(54px,8vw,116px);letter-spacing:.055em;text-transform:uppercase}
+h2{font-size:clamp(36px,5vw,68px);letter-spacing:.045em;text-transform:uppercase}
+h3{font-size:22px;letter-spacing:.035em;text-transform:uppercase}
+p{line-height:1.65}
+.script{font-family:'Brush Script MT','Segoe Script',cursive;color:var(--pink);letter-spacing:0;text-transform:none;font-weight:400}
+.title-script{display:block;font-size:.85em;margin-top:-.12em}
+.nav {
+  position:sticky; top:12px; z-index:50;
+  width:min(1060px, calc(100% - 32px)); margin:12px auto 0;
+  display:flex; justify-content:center; gap:8px; flex-wrap:wrap;
+  background:rgba(255,255,255,.91); backdrop-filter:blur(14px);
+  border-radius:22px; padding:12px 16px; box-shadow:0 14px 42px rgba(25,56,72,.10);
+}
+.nav button{
+  appearance:none; border:0; background:transparent; color:#596579; font-weight:900;
+  text-transform:uppercase; letter-spacing:.06em; font-size:13px;
+  display:flex; align-items:center; gap:6px; padding:10px 13px; border-radius:14px; cursor:pointer;
+}
+.nav button.active{background:#e8fcff;color:var(--deep)}
+.icon-svg{display:inline-flex;width:20px;height:20px;color:var(--deep);align-items:center;justify-content:center;flex:0 0 auto}
+.icon-svg svg{width:100%;height:100%}
+.site{width:min(1540px,100%);margin:0 auto;padding:20px clamp(18px,3.5vw,64px) 120px}
+.page{display:none;animation:fadeLift .5s ease both;min-height:calc(100vh - 110px);padding-top:20px}
+.page.active{display:block}
+@keyframes fadeLift{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.card{background:var(--card); border:var(--ring); border-radius:28px; box-shadow:var(--shadow); overflow:hidden}
+.logo-img{width:132px;max-width:38vw;object-fit:contain;filter:drop-shadow(0 12px 18px rgba(6,169,189,.14))}
+.logo-small{width:94px;margin-bottom:14px}
+.btn,.cta{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:54px;min-width:190px;
+  border-radius:999px;padding:15px 28px;background:linear-gradient(135deg,var(--teal),#5bd6e3);
+  color:white;text-decoration:none;font-weight:900;text-transform:uppercase;letter-spacing:.06em;
+  box-shadow:0 15px 32px rgba(6,169,189,.25)
+}
+.ghost{background:rgba(255,255,255,.13);border:1.4px solid rgba(255,255,255,.72);backdrop-filter:blur(10px)}
+.subtitle{font-family:Georgia,serif;color:#08788a;font-size:clamp(22px,2.6vw,34px);line-height:1.35;max-width:720px}
+.body-copy{font-size:17px;color:var(--ink)}
+.orange-line{width:82px;height:1px;background:var(--coral);margin:14px 0}
+.map-link{color:var(--deep);font-weight:900;text-decoration:none;display:inline-block;margin-top:12px}
+.resort-hero{position:relative;min-height:82vh;border-radius:36px;overflow:hidden;box-shadow:0 26px 56px rgba(34,60,88,.18);border:1px solid rgba(255,255,255,.7);isolation:isolate}
+.resort-bg{position:absolute;inset:0;background:linear-gradient(135deg,#0588a3,#86e6ef)}
+.resort-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.03);transform:scale(1.02)}
+.resort-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,59,76,.62),rgba(0,83,100,.34) 35%,rgba(255,255,255,.02) 80%),linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,0))}
+.resort-top,.resort-center,.resort-thumbs,.resort-address,.resort-wave{position:relative;z-index:2}
+.resort-top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;padding:28px 32px 0}
+.brand-lockup{display:flex;align-items:center;gap:16px;color:#fff}
+.brand-lockup img{width:180px;max-width:40vw}
+.hero-mini-links{display:flex;gap:16px;color:#fff;font-weight:900;text-transform:uppercase;letter-spacing:.08em;font-size:13px;flex-wrap:wrap;text-shadow:0 2px 12px rgba(0,0,0,.18)}
+.resort-center{max-width:720px;color:#fff;padding:58px 34px 170px;text-shadow:0 4px 22px rgba(0,0,0,.28)}
+.hero-overline{font-size:18px;font-weight:900;text-transform:uppercase;letter-spacing:.18em;margin:0 0 10px;color:white}
+.hero-display{font-size:clamp(58px,8vw,108px);line-height:.92;color:#fff;letter-spacing:.05em}
+.hero-copy{font-size:19px;line-height:1.65;color:#fff;max-width:650px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.resort-thumbs{position:absolute;right:26px;top:124px;width:min(250px,22vw);display:grid;gap:14px}
+.thumb-card{background:rgba(255,255,255,.94);padding:8px;border-radius:20px;box-shadow:0 18px 34px rgba(23,35,52,.16)}
+.thumb-card img{width:100%;height:120px;object-fit:cover;border-radius:14px;display:block}
+.thumb-card strong{display:block;font-family:Georgia,serif;color:var(--deep);font-size:16px;text-transform:uppercase;padding:9px 6px 0}
+.thumb-card span{display:block;font-size:13px;color:#647184;padding:2px 6px 5px;line-height:1.35}
+.resort-address{position:absolute;left:32px;bottom:112px;display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.18);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.42);border-radius:18px;padding:15px 18px;color:white;max-width:560px}
+.resort-address a{color:#fff;text-decoration:none;font-weight:900;line-height:1.45}
+.resort-wave{position:absolute;left:-4%;right:-4%;bottom:-1px;height:110px;background:var(--sand);clip-path:polygon(0 46%,8% 53%,16% 47%,25% 57%,34% 49%,43% 59%,52% 50%,61% 58%,70% 50%,80% 57%,90% 48%,100% 52%,100% 100%,0 100%)}
+.service-badges{position:relative;z-index:4;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1180px;margin:-34px auto 0;padding:0 18px}
+.service-pill{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.95);border-radius:24px;padding:18px;box-shadow:var(--shadow);border:var(--ring)}
+.service-pill img{width:56px;height:56px;border-radius:16px;object-fit:cover}
+.service-pill strong{display:block;color:var(--deep);font-family:Georgia,serif;font-size:18px;text-transform:uppercase}
+.service-pill span{display:block;font-size:13px;color:#647184}
+.grid{display:grid;gap:24px}
+.two{grid-template-columns:minmax(360px,.74fr) minmax(0,1.26fr);align-items:start}
+.three{grid-template-columns:repeat(3,1fr)}
+.six{grid-template-columns:repeat(6,1fr)}
+.section{margin-top:54px}
+.info-card{padding:24px}
+.quick{text-align:center;padding:22px 18px}
+.quick .icon-svg{width:34px;height:34px;color:var(--teal);margin:auto auto 10px}
+.quick .big{font-size:30px;color:var(--deep);font-weight:900;letter-spacing:.08em}
+.family-card{display:grid;grid-template-columns:190px 1fr;align-items:center;gap:22px;padding:18px}
+.family-card img{width:100%;height:190px;border-radius:22px;object-fit:cover}
+.hello{font-family:'Brush Script MT','Segoe Script',cursive;color:var(--pink);font-size:66px;line-height:.9}
+.section-head{display:flex;justify-content:space-between;gap:24px;align-items:end;flex-wrap:wrap;margin:22px 0 20px}
+.carousel-shell{position:relative;padding:8px 46px 26px}
+.carousel-track{display:grid;grid-auto-flow:column;grid-auto-columns:clamp(290px,30vw,390px);gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:8px 2px 18px;scrollbar-width:thin}
+.carousel-track::-webkit-scrollbar{height:7px}
+.carousel-track::-webkit-scrollbar-thumb{background:rgba(6,169,189,.28);border-radius:999px}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:1px solid rgba(6,169,189,.12);background:white;color:var(--deep);font-size:27px;z-index:5;display:grid;place-items:center;box-shadow:0 12px 28px rgba(24,45,68,.16);cursor:pointer}
+.carousel-btn.prev{left:0} .carousel-btn.next{right:0}
+.place{display:flex;flex-direction:column;min-height:430px;scroll-snap-align:center;transition:.25s ease}
+.place:hover{transform:translateY(-5px)}
+.place-img{height:230px;width:100%;object-fit:cover}
+.place-content{position:relative;padding:24px 20px 22px}
+.place .icon-bubble{position:absolute;top:-27px;left:18px;width:54px;height:54px;border-radius:50%;background:white;display:grid;place-items:center;box-shadow:0 12px 24px rgba(24,45,68,.16)}
+.icon-bubble .icon-svg{width:28px;height:28px;color:var(--teal)}
+.address{display:flex;gap:8px;align-items:flex-start;color:#647184;font-size:13px;font-weight:800;margin-top:9px}
+.address .icon-svg{width:15px;height:15px;color:var(--teal);margin-top:2px}
+.place p{font-size:15px}
+.clean-page{padding-top:12px}
+.footer-note{text-align:center;color:var(--teal);font-family:Georgia,serif;font-style:italic;font-size:23px;margin:40px auto 0}
+.footer-note .script{display:block;font-size:42px;line-height:.95}
+.share-block{padding:12px 8px;max-width:800px}
+.share-title{font-size:64px;line-height:.95}
+.share-title .script{font-size:92px}
+.social-line{display:flex;gap:12px;flex-wrap:wrap;color:var(--deep);font-weight:900;margin:20px 0;font-size:18px}
+.social-line a{display:inline-flex;align-items:center;gap:8px;color:var(--deep);text-decoration:none}
+.contact-icons{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:18px;text-align:center;font-weight:900;color:var(--deep)}
+.contact-icons a{color:var(--deep);text-decoration:none;display:flex;justify-content:center;align-items:center;gap:8px;overflow-wrap:anywhere}
+@media(max-width:1220px){
+  .resort-thumbs{position:static;width:100%;grid-template-columns:repeat(3,1fr);padding:0 28px 20px}
+  .resort-center{padding-bottom:38px}
+  .resort-address{position:static;margin:0 28px 24px;max-width:none}
+  .resort-wave{display:none}
+  .two{grid-template-columns:1fr}
+  .six{grid-template-columns:repeat(3,1fr)}
+  .three{grid-template-columns:1fr 1fr}
+}
+@media(max-width:820px){
+  .nav{position:fixed;left:10px;right:10px;bottom:10px;top:auto;width:auto;margin:0;padding:10px;display:grid;grid-template-columns:repeat(4,1fr);border-radius:22px}
+  .nav button{justify-content:center;font-size:10px;padding:9px 4px;flex-direction:column;gap:3px}
+  .nav .icon-svg{width:19px;height:19px}
+  .site{padding:12px 12px 150px}
+  .page{padding-top:10px}
+  .resort-hero{min-height:auto;border-radius:28px}
+  .resort-top{padding:18px;flex-direction:column}
+  .brand-lockup img{width:168px}
+  .hero-mini-links{font-size:11px;gap:9px}
+  .resort-center{padding:20px 18px 24px}
+  .hero-overline{font-size:13px}
+  .hero-display{font-size:clamp(48px,14vw,70px)}
+  .hero-copy{font-size:16px}
+  .hero-actions .cta,.hero-actions .ghost{width:100%;min-width:0}
+  .resort-thumbs{grid-template-columns:1fr;padding:0 18px 18px}
+  .service-badges{grid-template-columns:1fr 1fr;padding:0;margin:18px auto 0;gap:12px}
+  .service-pill{padding:12px;align-items:flex-start}
+  .service-pill img{width:48px;height:48px}
+  .six,.three{grid-template-columns:1fr}
+  .family-card{grid-template-columns:1fr}
+  .family-card img{height:240px}
+  h1{font-size:clamp(44px,13vw,68px)}
+  .subtitle{font-size:22px}
+  .carousel-shell{padding:8px 40px 24px}
+  .carousel-track{grid-auto-columns:88%;gap:14px;scrollbar-width:none}
+  .carousel-track::-webkit-scrollbar{display:none}
+  .carousel-btn{width:38px;height:38px}
+  .contact-icons{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Guest guide navigation">
+  <button class="active" data-page="home"><span class="icon-svg">⌂</span>Home</button>
+  <button data-page="stay"><span class="icon-svg">◆</span>Stay</button>
+  <button data-page="rules"><span class="icon-svg">☑</span>Rules</button>
+  <button data-page="guide"><span class="icon-svg">⌖</span>Guide</button>
+  <button data-page="dining"><span class="icon-svg">♨</span>Dining</button>
+  <button data-page="shop"><span class="icon-svg">◈</span>Shop</button>
+  <button data-page="relax"><span class="icon-svg">♡</span>Relax</button>
+  <button data-page="contact"><span class="icon-svg">✉</span>Contact</button>
+</nav>
+
+<main class="site">
+<section id="home" class="page active">
+  <div class="resort-hero">
+    <div class="resort-bg"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1674098710678210237/original/1b1fc00e-06df-4259-b978-221830e7afca.jpeg?im_w=720" alt="Royal Palm King Suite living area" onerror="this.onerror=null;this.src='unit-bedroom.jpg';"></div>
+    <div class="resort-top">
+      <div class="brand-lockup"><img src="palm-beach-getaways-logo.png" alt="Palm Beach Getaways logo"></div>
+      <div class="hero-mini-links"><span>1.5 Blocks to Beach</span><span>King Suite</span><span>Palm Beach Hotel</span></div>
+    </div>
+    <div class="resort-center">
+      <p class="hero-overline">Welcome to</p>
+      <h1 class="hero-display">The Royal<br>Palm King Suite</h1>
+      <p class="hero-copy">A bright, beautifully renovated Palm Beach retreat inside the iconic Palm Beach Hotel Condominium — your stylish home base for beach days, walkable dining, shopping, and island relaxation.</p>
+      <div class="hero-actions"><a class="cta" href="#" data-jump="stay">Start the Guide →</a><a class="cta ghost" target="_blank" href="https://www.airbnb.com/h/theroyalpalmkingsuite">View Airbnb</a></div>
+    </div>
+    <div class="resort-thumbs">
+      <div class="thumb-card"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1674098710678210237/original/652ef161-2451-43e5-97e3-963edad446b4.jpeg?im_w=720" onerror="this.onerror=null;this.src='unit-bedroom.jpg';" alt="King bedroom"><strong>King Suite</strong><span>Plush king bed and Palm Beach style.</span></div>
+      <div class="thumb-card"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1674098710678210237/original/1b1fc00e-06df-4259-b978-221830e7afca.jpeg?im_w=720" onerror="this.onerror=null;this.src='unit-bedroom.jpg';" alt="Living area"><strong>Stylish Stay</strong><span>Bright interiors and cozy lounge space.</span></div>
+      <div class="thumb-card"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1674098710678210237/original/59856d24-3f7b-4973-a94c-d802ecc94079.jpeg?im_w=720" onerror="this.onerror=null;this.src='unit-bedroom.jpg';" alt="Suite lounge"><strong>Island Comfort</strong><span>Perfect for couples, work trips, and recharging.</span></div>
+    </div>
+    <div class="resort-address"><span class="icon-svg">⌖</span><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Palm%20Beach%20Hotel%20Condominium%20235%20Sunrise%20Avenue%20Unit%202208%20Palm%20Beach%20FL%2033480">235 Sunrise Avenue, Unit 2208, Palm Beach, FL 33480</a></div>
+    <div class="resort-wave"></div>
+  </div>
+  <div class="service-badges">
+    <div class="service-pill"><img src="unit-bedroom.jpg"><div><strong>Beach Access</strong><span>Just 1.5 blocks to the sand.</span></div></div>
+    <div class="service-pill"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1674098710678210237/original/4b060f64-4f07-4f53-a096-2f1b9cddccc2.jpeg?im_w=720" onerror="this.src='unit-bedroom.jpg'"><div><strong>King Bed</strong><span>Restful bedroom retreat.</span></div></div>
+    <div class="service-pill"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1674098710678210237/original/59856d24-3f7b-4973-a94c-d802ecc94079.jpeg?im_w=720" onerror="this.src='unit-bedroom.jpg'"><div><strong>Walkable</strong><span>Dining and shops nearby.</span></div></div>
+    <div class="service-pill"><img src="palm-beach-day-spa.jpg"><div><strong>Relax</strong><span>Spa services in the building.</span></div></div>
+  </div>
+</section>
+
+<section id="stay" class="page">
+  <div class="grid two">
+    <div>
+      <img class="logo-img logo-small" src="palm-beach-getaways-logo.png" alt="">
+      <h1><span class="script">Welcome</span> To Your Palm Beach Escape</h1>
+      <div class="family-card section">
+        <img src="host-family-guide.jpg" alt="Horwitz family">
+        <div><div class="hello">Hello! ♡</div><p class="body-copy">We are Josh, Maria, Genesee, Gideon and baby Eliana. We live in Palm City, FL and run a real estate team together called Best Home Ever. We are so excited to welcome you to Palm Beach.</p></div>
+      </div>
+    </div>
+    <div class="card"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1674098710678210237/original/652ef161-2451-43e5-97e3-963edad446b4.jpeg?im_w=720" onerror="this.onerror=null;this.src='unit-bedroom.jpg';" style="width:100%;height:520px;object-fit:cover" alt="Royal Palm King Suite bedroom"></div>
+  </div>
+  <div class="grid six section">
+    <article class="quick card"><span class="icon-svg">⌁</span><h3>Wi-Fi</h3><div class="orange-line" style="margin:12px auto"></div><p><b>Network:</b><br>Owner<br><b>Password:</b><br>l!ghtDay42</p></article>
+    <article class="quick card"><span class="icon-svg">⌂</span><h3>Address</h3><div class="orange-line" style="margin:12px auto"></div><p>Palm Beach Hotel Condominium<br>235 Sunrise Avenue, Unit 2208</p></article>
+    <article class="quick card"><span class="icon-svg">↳</span><h3>Check-In</h3><div class="orange-line" style="margin:12px auto"></div><div class="big">3:00 PM</div></article>
+    <article class="quick card"><span class="icon-svg">↲</span><h3>Check-Out</h3><div class="orange-line" style="margin:12px auto"></div><div class="big">11:00 AM</div></article>
+    <article class="quick card"><span class="icon-svg">▣</span><h3>Front Desk</h3><div class="orange-line" style="margin:12px auto"></div><p>Proceed to the front desk and let them know you are checking into Unit 2208.</p></article>
+    <article class="quick card"><span class="icon-svg">▤</span><h3>Bag Storage</h3><div class="orange-line" style="margin:12px auto"></div><p>Coordinate with the Front Desk for bag drop before check-in or after checkout.</p></article>
+  </div>
+  <div class="card info-card section">
+    <h2>Parking Options</h2>
+    <p class="body-copy">Sunrise Ave has free street parking from 5 PM to 9 AM. The 200 block near Palm Beach Hotel is usually less crowded at night. Bradley Place has 2-hour parking, and Bradley Place north of Seminole/south of Royal Poinciana Way has free 1-hour parking during the day and free overnight from 5 PM to 10 AM. Paid parking is also available nearby.</p>
+  </div>
+</section>
+
+<section id="rules" class="page">
+  <img class="logo-img logo-small" src="palm-beach-getaways-logo.png" alt="">
+  <h1>Important <span class="script title-script">Info</span></h1>
+  <p class="subtitle">A few helpful reminders for a smooth Palm Beach stay.</p>
+  <div class="grid three section">
+    <article class="info-card card"><h3>House Rules</h3><div class="orange-line"></div><p>No unregistered guests or visitors. No pets. No loud music or parties. Smoking is absolutely prohibited in the unit. Please dispose of garbage properly.</p></article>
+    <article class="info-card card"><h3>Bathroom & Towels</h3><div class="orange-line"></div><p>Please feel free to use toiletries as needed. White washcloths, hand towels, bath towels, and bath mats are available for your use.</p></article>
+    <article class="info-card card"><h3>Emergency</h3><div class="orange-line"></div><p>In case of fire, exit the condo and follow the red exit signs. Do not use elevators. In an emergency, call 911 immediately.</p></article>
+    <article class="info-card card"><h3>Early Check-In / Late Check-Out</h3><div class="orange-line"></div><p>Requests are subject to availability and additional charges. Fees start at $50 and vary depending on hours requested.</p></article>
+    <article class="info-card card"><h3>Lock Up</h3><div class="orange-line"></div><p>Please close and lock all doors and windows before leaving the property.</p></article>
+    <article class="info-card card"><h3>Contact</h3><div class="orange-line"></div><p>Host: Josh Horwitz — (561) 358-9303<br>Front Desk: (561) 659-7665<br>Palm Beach Emergency: (561) 712-6400</p></article>
+  </div>
+</section>
+
+<section id="guide" class="page">
+  <img class="logo-img logo-small" src="palm-beach-getaways-logo.png" alt="">
+  <h1>Neighborhood <span class="script title-script">Guide</span></h1>
+  <p class="subtitle">Everything you need nearby for everyday essentials.</p>
+  <div class="grid three section">
+    <article class="info-card card"><h3>ATM / Banks</h3><div class="orange-line"></div><p>Bank of America — 140 N County Road<br>Chase Bank — 285 Sunrise Avenue<br>Wells Fargo — 254 Sunrise Avenue</p></article>
+    <article class="info-card card"><h3>Church & Synagogue</h3><div class="orange-line"></div><p>St. Edward Roman Catholic Church — 144 N County Road<br>Palm Beach Synagogue — 120 N County Road</p></article>
+    <article class="info-card card"><h3>Drugstores</h3><div class="orange-line"></div><p>Fedco Drugs — 225 Sunrise Avenue<br>Green's Pharmacy — 151 N County Road</p></article>
+    <article class="info-card card"><h3>Laundry Service</h3><div class="orange-line"></div><p>Tropical Cleaners — 178 N County Road<br>East Coast — 411 7th St, West Palm Beach</p></article>
+    <article class="info-card card"><h3>Grocery & Market</h3><div class="orange-line"></div><p>Amici Market — 155 N County Road<br>C'est Si Bon — 280 Sunset Avenue<br>Publix — 131 Bradley Place</p></article>
+  </div>
+  <div class="section-head section"><div><h2>Local Attractions</h2><p class="subtitle">Palm Beach has a way of making any visitor feel privileged.</p></div></div>
+  <div class="carousel-shell"><button class="carousel-btn prev">‹</button><div class="carousel-track" id="attractions"></div><button class="carousel-btn next">›</button></div>
+  <div class="section-head section"><div><h2>Tours & Sightseeing</h2><p class="subtitle">Let a local show you around The Palm Beaches.</p></div></div>
+  <div class="carousel-shell"><button class="carousel-btn prev">‹</button><div class="carousel-track" id="tours"></div><button class="carousel-btn next">›</button></div>
+</section>
+
+<section id="dining" class="page">
+  <img class="logo-img logo-small" src="palm-beach-getaways-logo.png" alt="">
+  <h1>Where to <span class="script title-script">Eat?</span></h1>
+  <p class="subtitle">Dining in The Palm Beaches makes every meal a special occasion.</p>
+  <div class="carousel-shell section"><button class="carousel-btn prev">‹</button><div class="carousel-track" id="diningCards"></div><button class="carousel-btn next">›</button></div>
+  <div class="section-head section"><div><h2>Ice Cream <span class="script title-script">Places</span></h2><p class="subtitle">It’s always a great time to enjoy a frozen treat.</p></div></div>
+  <div class="carousel-shell"><button class="carousel-btn prev">‹</button><div class="carousel-track" id="treatCards"></div><button class="carousel-btn next">›</button></div>
+</section>
+
+<section id="shop" class="page">
+  <img class="logo-img logo-small" src="palm-beach-getaways-logo.png" alt="">
+  <h1>Where to <span class="script title-script">Shop?</span></h1>
+  <p class="subtitle">Better leave room in your suitcase — shopping in The Palm Beaches is as enticing as the beaches.</p>
+  <div class="carousel-shell section"><button class="carousel-btn prev">‹</button><div class="carousel-track" id="shoppingCards"></div><button class="carousel-btn next">›</button></div>
+</section>
+
+<section id="relax" class="page">
+  <img class="logo-img logo-small" src="palm-beach-getaways-logo.png" alt="">
+  <h1>Pamper <span class="script title-script">Time?</span></h1>
+  <p class="subtitle">Come relax your senses with one of these services.</p>
+  <div class="grid two section" id="relaxCards"></div>
+  <div class="section-head section"><div><h2>Nightlife</h2><p class="subtitle">Going out for a night on the town in the Palm Beach area is a must.</p></div></div>
+  <div class="carousel-shell"><button class="carousel-btn prev">‹</button><div class="carousel-track" id="nightCards"></div><button class="carousel-btn next">›</button></div>
+</section>
+
+<section id="contact" class="page">
+  <div class="grid two">
+    <div>
+      <img class="logo-img logo-small" src="palm-beach-getaways-logo.png" alt="">
+      <div class="share-block">
+        <h1 class="share-title">Thank <span class="script title-script">You</span></h1>
+        <p class="subtitle">How was your experience?</p>
+        <p class="body-copy">Your feedback helps us improve. When you have a great stay, we would be so grateful if you would leave a glowing review and tag us on social media.</p>
+        <div class="social-line"><a target="_blank" href="https://www.instagram.com/palmbeachgetaways">◎ @palmbeachgetaways</a><span>|</span><a target="_blank" href="https://www.instagram.com/myrealtorcouple">◎ @myrealtorcouple</a></div>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="card family-card"><img src="horwitz-family-1.jpg" alt="Horwitz family"><div><h2>The Horwitz Family</h2><p class="body-copy">Meet Maria and Josh Horwitz, a dynamic couple living in Palm City, Florida. Together with their children, Genesee, Gideon, and baby Eliana, they live a purpose-filled life rooted in faith, family, and service. They are the team behind Best Home Ever and Palm Beach Getaways, and they love creating spaces where guests can relax, reconnect, and make meaningful memories.</p></div></div>
+      <div class="card contact-icons"><a target="_blank" href="https://palmbeachgetaways.com">PalmBeachGetaways.com</a><a target="_blank" href="https://besthomeever.com">BestHomeEver.com</a><a href="mailto:BestHomeEverTeam@gmail.com">BestHomeEverTeam@gmail.com</a><a href="tel:15613589303">(561) 358-9303</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<script>
+const DATA = {"airbnb": ["https://a0.muscache.com/im/pictures/hosting/Hosting-1674098710678210237/original/652ef161-2451-43e5-97e3-963edad446b4.jpeg?im_w=720", "https://a0.muscache.com/im/pictures/hosting/Hosting-1674098710678210237/original/4b060f64-4f07-4f53-a096-2f1b9cddccc2.jpeg?im_w=720", "https://a0.muscache.com/im/pictures/hosting/Hosting-1674098710678210237/original/1b1fc00e-06df-4259-b978-221830e7afca.jpeg?im_w=720", "https://a0.muscache.com/im/pictures/hosting/Hosting-1674098710678210237/original/59856d24-3f7b-4973-a94c-d802ecc94079.jpeg?im_w=720"], "dining": [{"title": "Echo", "img": "echo.jpg", "phone": "(877) 724-3188", "address": "230A Sunrise Ave, Palm Beach, FL 33480", "desc": "Bold flavors and an elevated atmosphere right near the Palm Beach Hotel.", "href": "https://www.google.com/maps/search/?api=1&query=Echo%20230A%20Sunrise%20Ave%20Palm%20Beach%20FL"}, {"title": "PB Catch", "img": "pb-catch.jpg", "phone": "(561) 655-5558", "address": "251 Sunrise Ave, Palm Beach, FL 33480", "desc": "Fresh local seafood, oysters, clams, shrimp, and fish.", "href": "https://www.google.com/maps/search/?api=1&query=PB%20Catch%20251%20Sunrise%20Ave%20Palm%20Beach%20FL"}, {"title": "Meat Market", "img": "meat-market.jpg", "phone": "(561) 354-9800", "address": "191 Bradley Pl, Palm Beach, FL 33480", "desc": "Glamorous steakhouse and seafood dining with a lively bar scene.", "href": "https://www.google.com/maps/search/?api=1&query=Meat%20Market%20191%20Bradley%20Pl%20Palm%20Beach%20FL"}, {"title": "Flagler Steakhouse", "img": "flagler-steakhouse.jpg", "phone": "(877) 724-3188", "address": "2 S County Rd, Palm Beach, FL 33480", "desc": "Classic steak and seafood in an elegant setting with golf course views.", "href": "https://www.google.com/maps/search/?api=1&query=Flagler%20Steakhouse%202%20S%20County%20Rd%20Palm%20Beach%20FL"}, {"title": "Trevini", "img": "trevini.jpg", "phone": "(561) 833-3883", "address": "223 Sunset Ave, Palm Beach, FL 33480", "desc": "Upscale dining with a beautiful interior perfect for a special dinner.", "href": "https://www.google.com/maps/search/?api=1&query=Trevini%20223%20Sunset%20Ave%20Palm%20Beach%20FL"}, {"title": "LoLa 41", "img": "lola-41.jpg", "phone": "(561) 599-5652", "address": "290 Sunset Ave, Palm Beach, FL 33480", "desc": "Vibrant restaurant specializing in cuisines from the 41st parallel.", "href": "https://www.google.com/maps/search/?api=1&query=LoLa%2041%20290%20Sunset%20Ave%20Palm%20Beach%20FL"}, {"title": "Henry’s", "img": "henrys.jpg", "phone": "(561) 206-1896", "address": "229 Royal Poinciana Way, Palm Beach, FL 33480", "desc": "Inviting American-inspired bistro for lunch, dinner, drinks, and brunch.", "href": "https://www.google.com/maps/search/?api=1&query=Henry's%20Palm%20Beach%20229%20Royal%20Poinciana%20Way"}, {"title": "Almond", "img": "almond.jpg", "phone": "(561) 355-5080", "address": "207 Royal Poinciana Way, Palm Beach, FL 33480", "desc": "Rustic French cuisine in a casually elegant atmosphere.", "href": "https://www.google.com/maps/search/?api=1&query=Almond%20207%20Royal%20Poinciana%20Way%20Palm%20Beach"}, {"title": "Green’s Pharmacy", "img": "greens-pharmacy.jpg", "phone": "(561) 832-4443", "address": "151 N County Rd, Palm Beach, FL 33480", "desc": "Classic soda fountain, diner bites, milkshakes, and nostalgic Palm Beach charm.", "href": "https://www.google.com/maps/search/?api=1&query=Green's%20Pharmacy%20151%20N%20County%20Rd%20Palm%20Beach"}, {"title": "Patrick Leze Pastry", "img": "patrick-leze.jpg", "phone": "(561) 366-1313", "address": "229 Sunrise Ave, Palm Beach, FL 33480", "desc": "French chocolaterie and patisserie located in the Palm Beach Hotel Condominium.", "href": "https://www.google.com/maps/search/?api=1&query=Patrick%20Leze%20Pastry%20229%20Sunrise%20Ave%20Palm%20Beach"}], "treats": [{"title": "Sloan’s", "img": "sloans.jpg", "phone": "(561) 833-4303", "address": "700 S Rosemary Ave #138, West Palm Beach, FL 33401", "desc": "A colorful ice cream wonderland with over-the-top sweets.", "href": "https://www.google.com/maps/search/?api=1&query=Sloan's%20Ice%20Cream%20700%20S%20Rosemary%20Ave%20West%20Palm%20Beach"}, {"title": "Crema", "img": "crema.jpg", "phone": "(561) 328-3561", "address": "310 S Dixie Hwy #318, West Palm Beach, FL 33401", "desc": "Thai rolled ice cream, acai bowls, vegan options, and milkshakes.", "href": "https://www.google.com/maps/search/?api=1&query=Crema%20310%20S%20Dixie%20Hwy%20West%20Palm%20Beach"}, {"title": "Piccolo Gelato", "img": "piccolo-gelato.jpg", "phone": "(561) 814-5966", "address": "66 Via Mizner, Palm Beach, FL 33480", "desc": "Freshly made Italian gelato with rotating flavors.", "href": "https://www.google.com/maps/search/?api=1&query=Piccolo%20Gelato%2066%20Via%20Mizner%20Palm%20Beach"}, {"title": "Sugar Milk Boba & Dessert Bar", "img": "sugar-milk.jpg", "phone": "(561) 389-6495", "address": "1401 Clare Ave, West Palm Beach, FL 33401", "desc": "Bubble waffles, soft serve, boba, and sweet treats.", "href": "https://www.google.com/maps/search/?api=1&query=Sugar%20Milk%20Boba%201401%20Clare%20Ave%20West%20Palm%20Beach"}], "shopping": [{"title": "Worth Avenue", "img": "worth-avenue.jpg", "phone": "(561) 659-6909", "address": "Worth Ave, Palm Beach, FL 33480", "desc": "The heart of Palm Beach shopping and one of the most iconic retail districts.", "href": "https://www.worth-avenue.com/"}, {"title": "Palm Beach Outlets", "img": "palm-beach-outlets.jpg", "phone": "", "address": "1751 Palm Beach Lakes Blvd E121, West Palm Beach, FL 33401", "desc": "Over 100 stores and favorite brands with outlet pricing.", "href": "https://www.palmbeachoutlets.com/"}, {"title": "The Royal Poinciana Plaza", "img": "royal-poinciana.jpg", "phone": "(561) 440-5441", "address": "340 Royal Poinciana Way, Palm Beach, FL 33480", "desc": "High-end shops and restaurants in a charming gardenlike setting.", "href": "https://www.google.com/maps/search/?api=1&query=Royal%20Poinciana%20Plaza%20Palm%20Beach"}, {"title": "Esplanade", "img": "esplanade.jpg", "phone": "(212) 546-0865", "address": "150 Worth Ave, Palm Beach, FL 33480", "desc": "Luxury retail steps from the Atlantic and legendary Worth Avenue.", "href": "https://www.google.com/maps/search/?api=1&query=Esplanade%20150%20Worth%20Ave%20Palm%20Beach"}, {"title": "West Palm Beach Green Market", "img": "green-market.jpg", "phone": "(561) 822-1500", "address": "101 S Clematis St, West Palm Beach, FL 33401", "desc": "Local produce and fresh market finds.", "href": "https://www.google.com/maps/search/?api=1&query=West%20Palm%20Beach%20Green%20Market%20101%20S%20Clematis"}, {"title": "Legacy Place", "img": "legacy-place.jpg", "phone": "(566) 776-0241", "address": "11290 Legacy Ave, Palm Beach Gardens, FL 33410", "desc": "Lifestyle center with shops, eateries, and everyday essentials.", "href": "https://www.google.com/maps/search/?api=1&query=Legacy%20Place%2011290%20Legacy%20Ave%20Palm%20Beach%20Gardens"}, {"title": "Rosemary Shopping Area", "img": "rosemary-square.jpg", "phone": "(561) 366-1000", "address": "700 S Rosemary Ave Suite 200, West Palm Beach, FL 33401", "desc": "Open-air plaza, restaurants, shopping, and entertainment.", "href": "https://www.google.com/maps/search/?api=1&query=Rosemary%20Square%20West%20Palm%20Beach"}], "relax": [{"title": "Palm Beach Day Spa", "img": "palm-beach-day-spa.jpg", "phone": "(561) 832-1660", "address": "235 Sunrise Ave, Palm Beach, FL 33480", "desc": "Located in the Palm Beach Hotel lobby for beauty, skin care, and spa treatments.", "href": "https://www.google.com/maps/search/?api=1&query=Palm%20Beach%20Day%20Spa%20235%20Sunrise%20Ave%20Palm%20Beach"}, {"title": "Beach Yoga Classes", "img": "beach-yoga.jpg", "phone": "$15 per class", "address": "Jillian’s Pop-Up Yoga", "desc": "Find your flow on the sand, recharge, and enjoy an oceanfront reset.", "href": "https://jillianspopupyoga.com/"}], "attractions": [{"title": "Palm Beach Lake Trail", "img": "lake-trail.jpg", "phone": "", "address": "Peruvian Ave to North Trail / Royal Palm Way to Whitehall Way", "desc": "A paved scenic trail along Lake Worth and the boat docks.", "href": "https://www.google.com/maps/search/?api=1&query=Palm%20Beach%20Lake%20Trail"}, {"title": "Antique Row", "img": "antique-row.jpg", "phone": "(305) 495-0784", "address": "3512 S Dixie Hwy, West Palm Beach, FL 33405", "desc": "A charming district with antiques, art, vintage finds, and decor.", "href": "https://www.google.com/maps/search/?api=1&query=Antique%20Row%20West%20Palm%20Beach"}, {"title": "The Society of the Four Arts", "img": "four-arts.jpg", "phone": "(561) 655-7227", "address": "100 Four Arts Plaza, Palm Beach, FL 33480", "desc": "Cultural programming, concerts, films, exhibitions, and gardens.", "href": "https://fourarts.org/"}, {"title": "Norton Museum", "img": "norton-museum.jpg", "phone": "(561) 832-5196", "address": "1450 S Dixie Hwy, West Palm Beach, FL 33401", "desc": "Museum with art collections, exhibitions, tours, talks, and programs.", "href": "https://www.norton.org/"}, {"title": "Phipps Ocean Park", "img": "phipps-ocean-park.jpg", "phone": "(561) 838-5400", "address": "2201 S Ocean Blvd, Palm Beach, FL 33480", "desc": "Laid-back beach park with shells, shade, and ocean views.", "href": "https://www.google.com/maps/search/?api=1&query=Phipps%20Ocean%20Park%20Palm%20Beach"}, {"title": "Clematis Street", "img": "clematis-street.jpg", "phone": "(877) 724-3188", "address": "Clematis St, West Palm Beach, FL", "desc": "Waterfront views, fountains, food, and entertainment.", "href": "https://www.google.com/maps/search/?api=1&query=Clematis%20Street%20West%20Palm%20Beach"}, {"title": "Ragtops Automobile Museum", "img": "ragtops.jpg", "phone": "(561) 379-6500", "address": "2025 North Dixie Highway, West Palm Beach, FL 33407", "desc": "Classic cars and a must-see for automobile lovers.", "href": "https://www.google.com/maps/search/?api=1&query=Ragtops%20Motorcars%20West%20Palm%20Beach"}, {"title": "Cinemark Boynton Beach 14 and XD", "img": "cinemark.jpg", "phone": "(561) 752-9797", "address": "1151 N Congress Ave, Boynton Beach, FL 33426", "desc": "Movie theater with multiple screens and stadium seating.", "href": "https://www.google.com/maps/search/?api=1&query=Cinemark%20Boynton%20Beach%2014%20and%20XD"}], "tours": [{"title": "Purely Palm Beach Tours", "img": "purely-palm-beach.jpg", "phone": "(561) 331-1071", "address": "lotustravelcompany.com", "desc": "Private Palm Beach tours with a local guide.", "href": "https://www.google.com/maps/search/?api=1&query=Purely%20Palm%20Beach%20Tours"}, {"title": "SkyBike", "img": "skybike.jpg", "phone": "(561) 412-1643", "address": "998 Clematis St, West Palm Beach, FL 33401", "desc": "A fun and convenient way to explore Downtown West Palm Beach.", "href": "https://www.google.com/maps/search/?api=1&query=SkyBike%20998%20Clematis%20West%20Palm%20Beach"}, {"title": "DivaDuck Amphibious Tour", "img": "divaduck.jpg", "phone": "(561) 844-4188", "address": "1751 Palm Beach Lakes Blvd, West Palm Beach, FL", "desc": "A colorful amphibious sightseeing tour for families.", "href": "https://www.divaduck.com/"}, {"title": "Segway Tours", "img": "segway.jpg", "phone": "(561) 283-8818", "address": "330 Clematis St #116, West Palm Beach, FL", "desc": "A guided adventure through one of the most exclusive areas in the world.", "href": "https://www.palmbeachsegwaytours.com/"}], "nightlife": [{"title": "Improv Comedy Club", "img": "improv.jpg", "phone": "(561) 833-1812", "address": "550 S Rosemary Ave, West Palm Beach, FL 33401", "desc": "Comedy club serving laughs, cocktails, and fun nights out.", "href": "https://www.palmbeachimprov.com/"}, {"title": "Square Grouper", "img": "square-grouper.jpg", "phone": "(561) 575-0252", "address": "1111 Love Street, Jupiter, FL 33477", "desc": "Tiki hut bar with live music and waterfront Jupiter inlet views.", "href": "https://www.squaregrouper.net/"}, {"title": "Kravis Center", "img": "kravis-center.jpg", "phone": "(561) 832-7469", "address": "701 Okeechobee Blvd, West Palm Beach, FL 33401", "desc": "Premier performing arts center with concerts, shows, and special events.", "href": "https://www.kravis.org/"}]};
+
+const svgs = {
+  pin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-5.5 7-12a7 7 0 0 0-14 0c0 6.5 7 12 7 12z"/><circle cx="12" cy="9" r="2"/></svg>',
+  food:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 3v8"/><path d="M8 3v8"/><path d="M6 3v18"/><path d="M14 3v18"/><path d="M14 3c4 2 5 7 0 10"/></svg>',
+  heart:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.8-9.5-9A5.5 5.5 0 0 1 12 5.6 5.5 5.5 0 0 1 21.5 12C19 16.2 12 21 12 21z"/></svg>'
+};
+function icon(name='heart'){return `<span class="icon-svg">${svgs[name]||svgs.heart}</span>`}
+function card(item){
+  const href=item.href || '#';
+  const phone=item.phone ? `<p><b>${item.phone}</b></p>` : '';
+  return `<a class="place card" target="_blank" rel="noopener" href="${href}">
+    <img class="place-img" src="${item.img}" alt="${item.title}" loading="lazy">
+    <div class="place-content"><div class="icon-bubble">${icon('heart')}</div><h3>${item.title}</h3>
+    <div class="address">${icon('pin')}<span>${item.address}</span></div>${phone}<div class="orange-line"></div><p>${item.desc}</p><span class="map-link">${href.includes('maps')?'Open map':'Open website'} →</span></div>
+  </a>`;
+}
+function render(id, arr){const el=document.getElementById(id); if(el) el.innerHTML=arr.map(card).join('')}
+render('diningCards', DATA.dining);
+render('treatCards', DATA.treats);
+render('shoppingCards', DATA.shopping);
+render('relaxCards', DATA.relax);
+render('attractions', DATA.attractions);
+render('tours', DATA.tours);
+render('nightCards', DATA.nightlife);
+
+const nav=[...document.querySelectorAll('.nav button')], pages=[...document.querySelectorAll('.page')];
+function showPage(id){
+  pages.forEach(p=>p.classList.toggle('active',p.id===id));
+  nav.forEach(b=>b.classList.toggle('active',b.dataset.page===id));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+nav.forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+document.querySelectorAll('[data-jump]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();showPage(a.dataset.jump)}));
+document.querySelectorAll('.carousel-shell').forEach(shell=>{
+  const track=shell.querySelector('.carousel-track'), prev=shell.querySelector('.prev'), next=shell.querySelector('.next');
+  if(!track) return;
+  const amount=()=>Math.min(track.clientWidth*.85,420);
+  prev?.addEventListener('click',()=>track.scrollBy({left:-amount(),behavior:'smooth'}));
+  next?.addEventListener('click',()=>track.scrollBy({left:amount(),behavior:'smooth'}));
+  let down=false,start=0,left=0;
+  track.addEventListener('pointerdown',e=>{down=true;start=e.pageX;left=track.scrollLeft;track.setPointerCapture?.(e.pointerId)});
+  track.addEventListener('pointermove',e=>{if(!down)return;track.scrollLeft=left-(e.pageX-start)});
+  ['pointerup','pointerleave','pointercancel'].forEach(ev=>track.addEventListener(ev,()=>down=false));
+});
+</script>
+</body>
+</html>
