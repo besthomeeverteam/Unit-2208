@@ -53,8 +53,8 @@ p{line-height:1.7;margin:0}
 .page.active{display:block}
 @keyframes fadeLift{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 .card{background:var(--card);border-radius:30px;border:var(--ring);box-shadow:var(--shadow);overflow:hidden}
-.logo-img{width:240px;filter:drop-shadow(0 8px 18px rgba(6,136,154,.12));object-fit:contain}
-.logo-small{width:210px;margin-bottom:18px}
+.logo-img{width:300px;filter:drop-shadow(0 8px 18px rgba(6,136,154,.12));object-fit:contain}
+.logo-small{width:250px;margin-bottom:18px}
 .cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;min-width:198px;padding:15px 28px;border-radius:999px;background:linear-gradient(135deg,#09b9ce,#67d6e2);color:#fff;text-decoration:none;font-weight:900;text-transform:uppercase;letter-spacing:.06em;box-shadow:0 16px 30px rgba(9,185,206,.22)}
 .cta.ghost{background:rgba(255,255,255,.18);border:1.3px solid rgba(255,255,255,.75);backdrop-filter:blur(8px);box-shadow:none}
 .body-copy{font-size:18px;color:var(--ink)}
@@ -127,9 +127,9 @@ p{line-height:1.7;margin:0}
 .phone-line{display:flex;align-items:center;gap:8px;color:var(--deep);font-weight:800;font-size:17px}
 .phone-line .icon-svg{width:16px;height:16px;color:var(--teal)}
 .map-link{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-weight:900;color:var(--deep);text-decoration:none}
-.relax-grid{display:grid;grid-template-columns:repeat(2,minmax(300px,430px));gap:22px;justify-content:start}
-.contact-layout{display:grid;grid-template-columns:minmax(360px,.88fr) minmax(0,1.22fr);gap:26px;align-items:start}
-.share-card,.contact-panel{padding:28px}
+.relax-grid{display:grid;grid-template-columns:repeat(2,minmax(300px,430px));gap:22px;justify-content:center}
+.contact-layout{display:grid;grid-template-columns:minmax(380px,.9fr) minmax(760px,1.45fr);gap:34px;align-items:start}
+.share-card,.contact-panel{padding:20px 0}
 .plain-section{background:transparent !important;border:none !important;box-shadow:none !important;border-radius:0 !important;padding:0 !important;overflow:visible !important}
 .stay-family{margin-top:12px}
 .stay-note{margin-top:2px}
@@ -140,22 +140,23 @@ p{line-height:1.7;margin:0}
 .share-title{font-size:clamp(54px,5vw,90px)}
 .social-line{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px;font-weight:900;color:var(--deep);font-size:18px}
 .social-line a{text-decoration:none;display:inline-flex;align-items:center;gap:8px}
-.family-panel{display:grid;grid-template-columns:220px 1fr;gap:22px;align-items:center;padding:18px}
+.family-panel{display:grid;grid-template-columns:250px 1fr;gap:28px;align-items:center;padding:24px}
 .family-panel img{width:100%;height:220px;object-fit:cover;border-radius:24px}
-.family-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.family-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;justify-content:center}
 .family-gallery img{height:180px;width:100%;object-fit:cover;border-radius:22px}
-.contact-chips{display:grid;grid-template-columns:1.15fr 1.15fr 1.45fr 1.15fr;gap:16px;align-items:stretch}
-.contact-chip{padding:18px 20px;border-radius:22px;background:var(--card);border:var(--ring);box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;gap:10px;font-weight:900;color:var(--deep);text-decoration:none;text-align:center;min-height:92px;font-size:18px;line-height:1.22}
-.contact-chip .icon-svg{width:18px;height:18px;color:var(--teal)}
-.contact-chip span:last-child{overflow-wrap:anywhere}
-.phone-chip span:last-child{white-space:nowrap;overflow-wrap:normal;font-size:clamp(18px,1.4vw,22px)}
+.contact-chips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:stretch}
+.contact-chip{padding:22px 24px;border-radius:22px;background:var(--card);border:var(--ring);box-shadow:var(--shadow);display:flex;align-items:center;justify-content:flex-start;gap:12px;font-weight:900;color:var(--deep);text-decoration:none;text-align:left;min-height:102px;font-size:clamp(20px,1.35vw,24px);line-height:1.2}
+.contact-chip .icon-svg{width:22px;height:22px;color:var(--teal);flex:0 0 auto}
+.contact-chip span:last-child{overflow-wrap:anywhere;max-width:100%}
+.phone-chip span:last-child{white-space:nowrap;overflow-wrap:normal;font-size:clamp(24px,2vw,30px)}
 .mobile-arrows{padding:8px 0 26px}
+#tours,#treatCards{justify-content:center}
 .mobile-arrows .carousel-btn{display:none}
 .relax-grid .place{min-height:392px}
 .small-note{font-size:15px;color:#718093}
 @media (max-width:1400px){
   .shell{width:min(100%,calc(100% - 24px))}
-  .contact-chips{grid-template-columns:1.1fr 1.1fr 1.45fr 1.1fr}
+  .contact-chips{grid-template-columns:repeat(2,minmax(0,1fr))}
   .stay-grid{grid-template-columns:1fr}
   .service-badges{grid-template-columns:1fr 1fr}
   .quick-grid{grid-template-columns:repeat(3,1fr)}
@@ -195,8 +196,8 @@ p{line-height:1.7;margin:0}
   .service-badges{grid-template-columns:1fr 1fr;padding:0;gap:12px;margin:18px auto 0}
   .service-pill{padding:12px;align-items:flex-start}
   .service-pill img{width:50px;height:50px}
-  .logo-img{width:184px}
-  .logo-small{width:168px}
+  .logo-img{width:220px}
+  .logo-small{width:190px}
   .stay-title{font-size:clamp(48px,12vw,68px);max-width:none}
   .family-card,.family-panel{grid-template-columns:1fr}
   .family-card img,.family-panel img{height:240px}
@@ -205,6 +206,7 @@ p{line-height:1.7;margin:0}
   .info-grid,.relax-grid{grid-template-columns:1fr}
   .carousel-shell{padding:8px 40px 26px}
   .carousel-track{grid-auto-columns:85%;gap:16px;scrollbar-width:none}
+  #tours,#treatCards{justify-content:start}
   .carousel-track::-webkit-scrollbar{display:none}
   .family-gallery{grid-template-columns:1fr}
   .contact-chips{grid-template-columns:1fr}
@@ -239,9 +241,9 @@ p{line-height:1.7;margin:0}
       <div class="hero-actions"><a class="cta" href="#" data-jump="stay">Start the Guide →</a><a class="cta ghost" target="_blank" href="https://www.airbnb.com/h/theroyalpalmkingsuite">View Airbnb</a></div>
     </div>
     <div class="resort-thumbs">
-      <div class="thumb-card"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1674098710678210237/original/652ef161-2451-43e5-97e3-963edad446b4.jpeg?im_w=900" alt="King suite bedroom" onerror="this.onerror=null;this.src='unit-bedroom.jpg';"><strong>King Suite</strong><span>Plush king bed and Palm Beach style.</span></div>
-      <div class="thumb-card"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1674098710678210237/original/1b1fc00e-06df-4259-b978-221830e7afca.jpeg?im_w=900" alt="Suite living area" onerror="this.onerror=null;this.src='unit-bedroom.jpg';"><strong>Stylish Stay</strong><span>Bright interiors and cozy lounge space.</span></div>
-      <div class="thumb-card"><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1674098710678210237/original/4b060f64-4f07-4f53-a096-2f1b9cddccc2.jpeg?im_w=900" alt="Additional suite view" onerror="this.onerror=null;this.src='unit-bedroom.jpg';"><strong>Island Comfort</strong><span>Perfect for couples, work trips, and recharging.</span></div>
+      <div class="thumb-card"><img src="hero-thumb-king.jpg" alt="King suite bedroom"><strong>King Suite</strong><span>Plush king bed and Palm Beach style.</span></div>
+      <div class="thumb-card"><img src="hero-thumb-stylish.jpg" alt="Suite living area"><strong>Stylish Stay</strong><span>Bright interiors and cozy lounge space.</span></div>
+      <div class="thumb-card"><img src="hero-thumb-comfort.jpg" alt="Additional suite view"><strong>Island Comfort</strong><span>Perfect for couples, work trips, and recharging.</span></div>
     </div>
     <div class="resort-address"><span class="icon-svg" data-icon="pin"></span><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Palm%20Beach%20Hotel%20Condominium%20235%20Sunrise%20Avenue%20Unit%202208%20Palm%20Beach%20FL%2033480">235 Sunrise Avenue, Unit 2208, Palm Beach, FL 33480</a></div>
     <div class="resort-wave"></div>
@@ -367,7 +369,7 @@ p{line-height:1.7;margin:0}
           <p class="body-copy">Meet Maria and Josh Horwitz, a dynamic couple living in Palm City, Florida. Together with their children, Genesee, Gideon, and baby Eliana, they live a purpose-filled life rooted in faith, family, and service. They are the team behind Best Home Ever and Palm Beach Getaways, and they love creating spaces where guests can relax, reconnect, and make meaningful memories.</p>
         </div>
       </div>
-      <div class="family-gallery">
+      <div class="family-gallery" style="align-items:center">
         <img class="card" src="horwitz-family-2.jpg" alt="Horwitz family photo 2">
         <img class="card" src="horwitz-family-3.jpg" alt="Horwitz family photo 3">
         <img class="card" src="newfield-family.jpg" alt="Horwitz family photo 4">

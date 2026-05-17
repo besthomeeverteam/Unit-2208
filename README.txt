@@ -28,3 +28,13 @@ V6 update:
 - Reduced oversized relax cards to match the scale of the other location cards.
 - Hid left/right arrows on desktop for Tours & Sightseeing and Ice Cream; arrows still show on tablet and phone.
 - Enlarged and balanced the contact chips, especially the phone number chip, for more consistent sizing.
+
+
+V7 update:
+- Replaced the duplicate hero thumbnail photos with distinct local images so the three cards no longer repeat the same bedroom photo.
+
+
+V8 update:
+- Replaced site logo with the user-provided Palm Beach Getaways logo (cropped from transparent source).
+- Centered photo-heavy sections more cleanly.
+- Maximized the contact page and enlarged contact chips so text no longer gets cut off.
