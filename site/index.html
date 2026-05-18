@@ -53,8 +53,8 @@ p{line-height:1.7;margin:0}
 .page.active{display:block}
 @keyframes fadeLift{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 .card{background:var(--card);border-radius:30px;border:var(--ring);box-shadow:var(--shadow);overflow:hidden}
-.logo-img{width:300px;filter:drop-shadow(0 8px 18px rgba(6,136,154,.12));object-fit:contain}
-.logo-small{width:250px;margin-bottom:18px}
+.logo-img{width:230px;filter:drop-shadow(0 8px 18px rgba(6,136,154,.12));object-fit:contain}
+.logo-small{width:200px;margin-bottom:18px}
 .cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;min-width:198px;padding:15px 28px;border-radius:999px;background:linear-gradient(135deg,#09b9ce,#67d6e2);color:#fff;text-decoration:none;font-weight:900;text-transform:uppercase;letter-spacing:.06em;box-shadow:0 16px 30px rgba(9,185,206,.22)}
 .cta.ghost{background:rgba(255,255,255,.18);border:1.3px solid rgba(255,255,255,.75);backdrop-filter:blur(8px);box-shadow:none}
 .body-copy{font-size:18px;color:var(--ink)}
@@ -67,7 +67,7 @@ p{line-height:1.7;margin:0}
 .resort-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,56,69,.46) 0%,rgba(4,56,69,.18) 36%,rgba(4,56,69,.02) 74%),linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02))}
 .resort-top,.resort-center,.resort-thumbs,.resort-address,.resort-wave{position:relative;z-index:2}
 .resort-top{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;padding:26px 30px 0}
-.brand-lockup img{width:214px}
+.brand-lockup img{width:176px}
 .hero-mini-links{display:flex;flex-wrap:wrap;gap:16px;font-size:14px;font-weight:900;text-transform:uppercase;letter-spacing:.08em;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.18)}
 .resort-center{max-width:760px;color:#fff;padding:56px 30px 170px}
 .hero-overline{font-size:17px;letter-spacing:.18em;font-weight:900;text-transform:uppercase;margin-bottom:10px}
@@ -141,7 +141,7 @@ p{line-height:1.7;margin:0}
 .social-line{display:flex;gap:14px;flex-wrap:wrap;margin-top:18px;font-weight:900;color:var(--deep);font-size:18px}
 .social-line a{text-decoration:none;display:inline-flex;align-items:center;gap:8px}
 .family-panel{display:grid;grid-template-columns:250px 1fr;gap:28px;align-items:center;padding:24px}
-.family-panel img{width:100%;height:220px;object-fit:cover;border-radius:24px}
+.family-panel img{width:100%;height:280px;object-fit:cover;border-radius:24px}
 .family-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;justify-content:center}
 .family-gallery img{height:180px;width:100%;object-fit:cover;border-radius:22px}
 .contact-chips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:stretch}
@@ -154,12 +154,12 @@ p{line-height:1.7;margin:0}
 .mobile-arrows .carousel-btn{display:none}
 .relax-grid .place{min-height:392px}
 .small-note{font-size:15px;color:#718093}
-#relax>h1,#relax>p.subtitle{text-align:center;margin-left:auto;margin-right:auto}
-#relax>.section{display:flex;flex-direction:column;align-items:center;text-align:center}
-#relax>.relax-grid{max-width:950px;margin-left:auto;margin-right:auto}
+#relax>.logo-img,#relax>h1,#relax>p.subtitle,#relax>.night-intro{width:min(100%,980px);margin-left:auto;margin-right:auto;text-align:left}
+#relax>.logo-img{display:block}
+#relax>.relax-grid{max-width:920px;margin-left:auto;margin-right:auto}
 #relax>.carousel-shell{max-width:1220px;margin-left:auto;margin-right:auto}
 #nightCards{justify-content:center}
-@media (max-width:860px){#nightCards{justify-content:start}}
+@media (max-width:860px){#nightCards{justify-content:start}#relax>.logo-img,#relax>h1,#relax>p.subtitle,#relax>.night-intro{width:100%}}
 @media (max-width:1400px){
   .shell{width:min(100%,calc(100% - 24px))}
   .contact-chips{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -202,8 +202,8 @@ p{line-height:1.7;margin:0}
   .service-badges{grid-template-columns:1fr 1fr;padding:0;gap:12px;margin:18px auto 0}
   .service-pill{padding:12px;align-items:flex-start}
   .service-pill img{width:50px;height:50px}
-  .logo-img{width:220px}
-  .logo-small{width:190px}
+  .logo-img{width:190px}
+  .logo-small{width:160px}
   .stay-title{font-size:clamp(48px,12vw,68px);max-width:none}
   .family-card,.family-panel{grid-template-columns:1fr}
   .family-card img,.family-panel img{height:240px}
@@ -257,7 +257,7 @@ p{line-height:1.7;margin:0}
   <div class="service-badges">
     <div class="service-pill"><img src="front-pill-building.jpg" alt="Palm Beach Hotel location"><div><strong>Beach Access</strong><span>Just 1.5 blocks to the sand.</span></div></div>
     <div class="service-pill"><img src="front-pill-bedroom.jpg" alt="King bed bedroom"><div><strong>King Bed</strong><span>Restful bedroom retreat.</span></div></div>
-    <div class="service-pill"><img src="front-pill-kitchen.jpg" alt="Renovated kitchenette"><div><strong>Walkable</strong><span>Dining and shops nearby.</span></div></div>
+    <div class="service-pill"><img src="front-pill-walkable.jpg" alt="Palm Beach walkable area aerial view"><div><strong>Walkable</strong><span>Dining and shops nearby.</span></div></div>
     <div class="service-pill"><img src="front-pill-pool.png" alt="Palm Beach Hotel pool"><div><strong>Relax</strong><span>Poolside relaxation at the hotel.</span></div></div>
   </div>
 </section>
@@ -348,7 +348,7 @@ p{line-height:1.7;margin:0}
   <h1>Pamper <span class="script title-script">Time?</span></h1>
   <p class="subtitle">Come relax your senses with one of these services.</p>
   <div class="relax-grid section" id="relaxCards"></div>
-  <div class="section"><h2>Nightlife</h2><p class="subtitle">Going out for a night on the town in the Palm Beach area is always a good idea.</p></div>
+  <div class="section night-intro"><h2>Nightlife</h2><p class="subtitle">Going out for a night on the town in the Palm Beach area is always a good idea.</p></div>
   <div class="carousel-shell"><button class="carousel-btn prev" aria-label="Previous">‹</button><div class="carousel-track" id="nightCards"></div><button class="carousel-btn next" aria-label="Next">›</button></div>
 </section>
 
@@ -368,17 +368,12 @@ p{line-height:1.7;margin:0}
     </div>
     <div class="grid">
       <div class="card family-panel">
-        <img src="horwitz-family-1.jpg" alt="The Horwitz family">
+        <img src="horwitz-family-3.jpg" alt="The Horwitz family">
         <div>
           <h2>The Horwitz Family</h2>
           <div class="orange-line"></div>
           <p class="body-copy">Meet Maria and Josh Horwitz, a dynamic couple living in Palm City, Florida. Together with their children, Genesee, Gideon, and baby Eliana, they live a purpose-filled life rooted in faith, family, and service. They are the team behind Best Home Ever and Palm Beach Getaways, and they love creating spaces where guests can relax, reconnect, and make meaningful memories.</p>
         </div>
-      </div>
-      <div class="family-gallery" style="align-items:center">
-        <img class="card" src="horwitz-family-2.jpg" alt="Horwitz family photo 2">
-        <img class="card" src="horwitz-family-3.jpg" alt="Horwitz family photo 3">
-        <img class="card" src="newfield-family.jpg" alt="Horwitz family photo 4">
       </div>
       <div class="contact-chips">
         <a class="contact-chip" target="_blank" href="https://palmbeachgetaways.com"><span class="icon-svg" data-icon="globe"></span><span>PalmBeachGetaways.com</span></a>
