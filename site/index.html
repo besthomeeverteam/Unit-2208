@@ -364,7 +364,7 @@ p{line-height:1.7;margin:0}
     <article class="info-card card"><h3>Emergency</h3><div class="orange-line"></div><p>In case of fire, exit the condo and follow the red exit signs. Do not use elevators. In an emergency, call 911 immediately.</p></article>
     <article class="info-card card"><h3>Early Check-In / Late Check-Out</h3><div class="orange-line"></div><p>Requests are subject to availability and additional charges. Fees start at $50 and vary depending on hours requested.</p></article>
     <article class="info-card card"><h3>Lock Up</h3><div class="orange-line"></div><p>Please close and lock all doors and windows before leaving the property.</p></article>
-    <article class="info-card card"><h3>Contact</h3><div class="orange-line"></div><p>Host: Josh Horwitz — (561) 358-9303<br>Front Desk: (561) 659-7665<br>Palm Beach Emergency: (561) 712-6400</p></article>
+    <article class="info-card card"><h3>Contact</h3><div class="orange-line"></div><p>Host: Josh Horwitz — (561) 570-6355<br>Front Desk: (561) 659-7665<br>Palm Beach Emergency: (561) 712-6400</p></article>
   </div>
 </section>
 
@@ -438,7 +438,7 @@ p{line-height:1.7;margin:0}
         <a class="contact-chip" target="_blank" href="https://palmbeachgetaways.com"><span class="icon-svg" data-icon="globe"></span><span>PalmBeachGetaways.com</span></a>
         <a class="contact-chip" target="_blank" href="https://besthomeever.com"><span class="icon-svg" data-icon="globe"></span><span>BestHomeEver.com</span></a>
         <a class="contact-chip" href="mailto:BestHomeEverTeam@gmail.com"><span class="icon-svg" data-icon="mail"></span><span>BestHomeEverTeam@gmail.com</span></a>
-        <a class="contact-chip phone-chip" href="tel:15613589303"><span class="icon-svg" data-icon="phone"></span><span>(561) 358-9303</span></a>
+        <a class="contact-chip phone-chip" href="tel:15615706355"><span class="icon-svg" data-icon="phone"></span><span>(561) 570-6355</span></a>
       </div>
     </div>
   </div>
@@ -473,7 +473,7 @@ function card(item,section){
   const isMap = href.includes('google.com/maps') || href.includes('maps/search');
   const safeHref=esc(href), safeTitle=esc(item.title);
   const phone=item.phone?'<span class="phone-line">'+icon('phone')+'<span>'+esc(item.phone)+'</span></span>':'';
-  return '<a class="place card click-card" href="'+safeHref+'" rel="noopener" aria-label="Open '+safeTitle+'">'+
+  return '<a class="place card click-card" href="'+safeHref+'" target="_blank" rel="noopener noreferrer" aria-label="Open '+safeTitle+'">'+
     '<img class="place-img" src="'+esc(item.img)+'" alt="'+safeTitle+'" loading="lazy">'+
     '<span class="place-content"><span class="icon-bubble">'+icon(iconBySection[section]||'spark')+'</span><span class="place-title-link"><h3>'+safeTitle+'</h3></span>'+
     '<span class="address address-link">'+icon('pin')+'<span>'+esc(item.address)+'</span></span>'+
