@@ -165,7 +165,7 @@ p{line-height:1.7;margin:0}
 #nightCards{justify-content:center}
 .place-cover-link{display:block;text-decoration:none;color:inherit}
 .place.card{color:inherit;text-decoration:none}
-.click-card{cursor:pointer}
+.click-card{cursor:pointer;text-decoration:none;color:inherit}
 @media (max-width:1180px){#relax{--relax-left:24px}}
 @media (max-width:860px){#nightCards{justify-content:start}#relax{--relax-left:0px;}#relax>.logo-img,#relax>h1,#relax>p.subtitle,#relax>.night-intro{width:100%;margin-left:0;margin-right:0}}
 @media (max-width:1400px){
@@ -260,6 +260,8 @@ p{line-height:1.7;margin:0}
   margin-right:auto !important;
 }
 .place-cover-link,.place-title-link,.address-link,.map-link{cursor:pointer;}
+.click-card:hover .map-link{text-decoration:underline}
+.place-content{color:inherit}
 .place-title-link{display:block;color:inherit;text-decoration:none;}
 .place-cover-link{display:block;text-decoration:none;color:inherit;}
 .place.card{color:inherit;text-decoration:none;}
@@ -471,31 +473,22 @@ function card(item,section){
   const isMap = href.includes('google.com/maps') || href.includes('maps/search');
   const safeHref=esc(href), safeTitle=esc(item.title);
   const phone=item.phone?'<span class="phone-line">'+icon('phone')+'<span>'+esc(item.phone)+'</span></span>':'';
-  return '<article class="place card click-card" tabindex="0" role="link" data-href="'+safeHref+'" aria-label="Open '+safeTitle+'">'+
-    '<a class="place-cover-link" target="_blank" rel="noopener" href="'+safeHref+'"><img class="place-img" src="'+esc(item.img)+'" alt="'+safeTitle+'" loading="lazy"></a>'+
-    '<div class="place-content"><span class="icon-bubble">'+icon(iconBySection[section]||'spark')+'</span><a class="place-title-link" target="_blank" rel="noopener" href="'+safeHref+'"><h3>'+safeTitle+'</h3></a>'+
-    '<a class="address address-link" target="_blank" rel="noopener" href="'+safeHref+'">'+icon('pin')+'<span>'+esc(item.address)+'</span></a>'+
+  return '<a class="place card click-card" href="'+safeHref+'" rel="noopener" aria-label="Open '+safeTitle+'">'+
+    '<img class="place-img" src="'+esc(item.img)+'" alt="'+safeTitle+'" loading="lazy">'+
+    '<span class="place-content"><span class="icon-bubble">'+icon(iconBySection[section]||'spark')+'</span><span class="place-title-link"><h3>'+safeTitle+'</h3></span>'+
+    '<span class="address address-link">'+icon('pin')+'<span>'+esc(item.address)+'</span></span>'+
     phone+'<span class="orange-line"></span><p>'+esc(item.desc)+'</p>'+
-    '<a class="map-link" target="_blank" rel="noopener" href="'+safeHref+'">'+icon(isMap?'pin':'globe')+(isMap?'Open map':'Open website')+' →</a></div></article>';
+    '<span class="map-link">'+icon(isMap?'pin':'globe')+(isMap?'Open map':'Open website')+' →</span></span></a>';
 }
 function render(id,arr,section){const el=document.getElementById(id); if(el) el.innerHTML=arr.map(item=>card(item,section)).join('');}
 render('diningCards',DATA.dining,'dining');render('treatCards',DATA.treats,'treats');render('shoppingCards',DATA.shopping,'shopping');render('relaxCards',DATA.relax,'relax');render('relaxCardsCarousel',DATA.relax,'relax');render('attractions',DATA.attractions,'attractions');render('tours',DATA.tours,'tours');render('nightCards',DATA.nightlife,'nightlife');
 insertIcons();
-document.addEventListener('click',e=>{
-  if(e.target.closest('a')) return;
-  const card=e.target.closest('.click-card');
-  if(card && card.dataset.href){ window.open(card.dataset.href,'_blank','noopener'); }
-});
-document.addEventListener('keydown',e=>{
-  const card=e.target.closest && e.target.closest('.click-card');
-  if(card && card.dataset.href && (e.key==='Enter' || e.key===' ')){ e.preventDefault(); window.open(card.dataset.href,'_blank','noopener'); }
-});
 
 
 const nav=[...document.querySelectorAll('.nav button')], pages=[...document.querySelectorAll('.page')];
 function showPage(id){pages.forEach(p=>p.classList.toggle('active',p.id===id));nav.forEach(b=>b.classList.toggle('active',b.dataset.page===id));window.scrollTo({top:0,behavior:'smooth'});}
 nav.forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
 document.querySelectorAll('[data-jump]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();showPage(a.dataset.jump)}));
-document.querySelectorAll('.carousel-shell').forEach(shell=>{const track=shell.querySelector('.carousel-track'),prev=shell.querySelector('.prev'),next=shell.querySelector('.next');if(!track)return;const amount=()=>Math.min(track.clientWidth*.84,420);prev&&prev.addEventListener('click',()=>track.scrollBy({left:-amount(),behavior:'smooth'}));next&&next.addEventListener('click',()=>track.scrollBy({left:amount(),behavior:'smooth'}));let down=false,start=0,left=0;track.addEventListener('pointerdown',e=>{down=true;start=e.pageX;left=track.scrollLeft;track.style.cursor='grabbing';track.setPointerCapture&&track.setPointerCapture(e.pointerId)});track.addEventListener('pointermove',e=>{if(!down)return;track.scrollLeft=left-(e.pageX-start)});['pointerup','pointerleave','pointercancel'].forEach(ev=>track.addEventListener(ev,()=>{down=false;track.style.cursor='grab'}));track.style.cursor='grab';});
+document.querySelectorAll('.carousel-shell').forEach(shell=>{const track=shell.querySelector('.carousel-track'),prev=shell.querySelector('.prev'),next=shell.querySelector('.next');if(!track)return;const amount=()=>Math.min(track.clientWidth*.84,420);prev&&prev.addEventListener('click',e=>{e.preventDefault();track.scrollBy({left:-amount(),behavior:'smooth'})});next&&next.addEventListener('click',e=>{e.preventDefault();track.scrollBy({left:amount(),behavior:'smooth'})});});
 </script>
 </body></html>

@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "unit-2208",
+  "name": "royal-palm-king-suite-guide-v18",
   "compatibility_date": "2026-05-17",
   "assets": {
     "directory": "./site",
