@@ -240,8 +240,10 @@ p{line-height:1.7;margin:0}
   .hero-actions .cta{width:100%;min-width:0;min-height:50px;padding:13px 22px}
   .resort-thumbs{grid-template-columns:1fr;padding:0 14px 12px}
   .service-badges{grid-template-columns:1fr 1fr;padding:0;gap:12px;margin:18px auto 0}
-  .service-pill{padding:12px;align-items:flex-start}
+  .service-pill{padding:12px;align-items:flex-start;min-width:0}
   .service-pill img{width:50px;height:50px}
+  .service-pill strong{font-size:17px;line-height:1;overflow-wrap:anywhere;word-break:break-word}
+  .service-pill span{font-size:13px;line-height:1.35}
   .logo-img{width:190px}
   .logo-small{width:160px}
   .stay-title{font-size:clamp(48px,12vw,68px);max-width:none}
@@ -258,45 +260,62 @@ p{line-height:1.7;margin:0}
   .contact-chips{grid-template-columns:1fr}
 }
 
-/* v31: always-visible left/right carousel controls on every location carousel */
-.carousel-shell{overflow:visible}
+/* v32: icon-only carousel arrows centered over each location carousel */
+.carousel-shell{
+  overflow:visible;
+  padding:8px 0 26px !important;
+}
+.carousel-track{
+  padding:8px 2px 18px;
+}
 .carousel-btn{
   display:flex !important;
   align-items:center;
   justify-content:center;
-  gap:6px;
   opacity:1 !important;
   visibility:visible !important;
   pointer-events:auto !important;
+  top:50% !important;
+  bottom:auto !important;
+  transform:translateY(-50%) !important;
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  border:1px solid rgba(6,136,154,.16);
+  background:rgba(255,255,255,.96);
+  color:var(--deep);
+  box-shadow:0 14px 28px rgba(24,45,68,.18);
   font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
   font-size:34px;
   font-weight:900;
   line-height:1;
   transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
 }
-.carousel-btn:hover{background:#f2fdff;box-shadow:0 16px 30px rgba(24,45,68,.2)}
+.carousel-btn.prev{left:10px !important}
+.carousel-btn.next{right:10px !important}
+.carousel-btn:hover{background:#f2fdff;box-shadow:0 16px 30px rgba(24,45,68,.2);transform:translateY(-50%) scale(1.03) !important}
 .carousel-btn:focus-visible{outline:3px solid rgba(6,136,154,.35);outline-offset:3px}
-.carousel-btn .arrow-label{display:none;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+.carousel-btn .arrow-label{display:none !important}
 .carousel-btn .arrow-symbol{display:inline-flex;align-items:center;justify-content:center;line-height:1;margin-top:-2px}
 @media (min-width:861px) and (max-width:1180px){
-  .carousel-shell{padding-left:58px !important;padding-right:58px !important}
-  .carousel-btn{width:48px;height:48px;font-size:36px}
+  .carousel-btn{width:50px;height:50px;font-size:34px}
+  .carousel-btn.prev{left:8px !important}
+  .carousel-btn.next{right:8px !important}
 }
 @media (max-width:860px){
-  .carousel-shell{padding:8px 40px 72px !important}
+  .carousel-shell{padding:8px 0 26px !important}
+  .carousel-track{grid-auto-columns:85%;gap:16px;scrollbar-width:none;padding:8px 2px 12px !important}
   .carousel-btn{
-    top:auto !important;
-    bottom:14px !important;
-    transform:none !important;
-    width:min(150px,calc(50% - 22px));
-    height:48px;
-    border-radius:999px;
-    font-size:26px;
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    font-size:30px;
+    top:50% !important;
+    bottom:auto !important;
+    transform:translateY(-50%) !important;
   }
-  .carousel-btn.prev{left:12px !important}
-  .carousel-btn.next{right:12px !important}
-  .carousel-btn .arrow-label{display:inline-flex}
-  .carousel-track{padding-bottom:8px !important}
+  .carousel-btn.prev{left:6px !important}
+  .carousel-btn.next{right:6px !important}
 }
 
 /* v16 final fixes: left titles, indented cards, true clickable cards */
