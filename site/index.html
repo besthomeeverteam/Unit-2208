@@ -392,6 +392,35 @@ p{line-height:1.7;margin:0}
   .hero-copy{font-size:13.5px !important; line-height:1.35 !important;}
 }
 
+
+/* v36: simplify hello text and align relax/nightlife carousels with section text */
+#relax > .carousel-shell,
+#relax > .carousel-shell.section,
+#relax .carousel-shell:not(.relax-mobile-shell){
+  width:100% !important;
+  max-width:none !important;
+  margin-left:0 !important;
+  margin-right:0 !important;
+  padding-left:0 !important;
+  padding-right:0 !important;
+}
+#relax #relaxCards,
+#relax #nightCards{
+  justify-content:start !important;
+}
+#relax #relaxCards.carousel-track,
+#relax #nightCards.carousel-track{
+  width:100% !important;
+}
+@media (min-width:861px){
+  #relax > h1,
+  #relax > p.subtitle,
+  #relax > .night-intro,
+  #relax > .logo-img{
+    max-width:none !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -444,7 +473,7 @@ p{line-height:1.7;margin:0}
       <h1 class="stay-title"><span class="script">Welcome</span><br>To Your<br>Palm Beach<br>Escape</h1>
       <div class="family-card stay-family section">
         <img src="host-family-guide.jpg" alt="The Horwitz family">
-        <div><div class="hello">Hello! ♡</div><p class="body-copy">We are Josh, Maria, Genesee, Gideon, and baby Eliana. We live in Palm City, Florida and run a real estate team together called Best Home Ever. We’re so happy to host your Palm Beach stay.</p></div>
+        <div><div class="hello">Hello! ♡</div><p class="body-copy">We are your hosts Josh and Maria!</p></div>
       </div>
     </div>
     <div class="grid">
