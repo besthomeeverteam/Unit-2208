@@ -444,6 +444,20 @@ p{line-height:1.7;margin:0}
   #guide .info-grid{grid-template-columns:1fr !important;max-width:none;}
 }
 
+
+/* v41: equal guide box heights and vertically centered hello text */
+.family-card{align-items:center !important;}
+.family-card > div{display:flex;flex-direction:column;justify-content:center;height:100%;}
+#guide .info-grid{align-items:stretch !important;}
+#guide .info-card{height:100%;display:flex;flex-direction:column;justify-content:flex-start;}
+
+
+/* v42: parking options consolidated into one text box */
+.parking-summary{max-width:1120px;padding:28px 30px !important;display:grid;gap:14px;}
+.parking-summary p{font-size:17px;line-height:1.65;}
+.parking-summary strong{color:var(--deep);font-weight:900;}
+@media (max-width:860px){.parking-summary{padding:22px !important}.parking-summary p{font-size:15.5px;}}
+
 </style>
 </head>
 <body>
@@ -512,15 +526,15 @@ p{line-height:1.7;margin:0}
     <article class="quick card"><span class="icon-svg" data-icon="clipboard"></span><h3>Front Desk</h3><div class="orange-line" style="margin:12px auto"></div><p>Proceed to the front desk and let them know you are checking into Unit 2208.</p></article>
     <article class="quick card"><span class="icon-svg" data-icon="bag"></span><h3>Bag Storage</h3><div class="orange-line" style="margin:12px auto"></div><p>Coordinate with the front desk for bag drop before check-in or after checkout.</p></article>
   </div>
-  <div class="section">
-  <h2>Parking Options</h2><div class="orange-line"></div>
-  <p class="body-copy" style="margin-bottom:16px">Paid parking lots are also available within walking distance.</p>
-  <div class="parking-list">
-    <div class="parking-item"><strong>Sunrise Avenue</strong><p>Free street parking from <b>5 PM to 9 AM</b>.</p></div>
-    <div class="parking-item"><strong>200 Block Near Palm Beach Hotel</strong><p>Usually less crowded at night.</p></div>
-    <div class="parking-item"><strong>Bradley Place</strong><p><b>2-hour parking</b> is available.</p></div>
-    <div class="parking-item"><strong>Bradley Place North of Seminole &amp; South of Royal Poinciana Way</strong><p>Free <b>1-hour parking</b> during the day and free <b>overnight parking from 5 PM to 10 AM</b>.</p></div>
-  </div>
+  <div class="section parking-section">
+  <h2>Parking Options Near Palm Beach Hotel Condo</h2><div class="orange-line"></div>
+  <article class="info-card card parking-summary">
+    <p><strong>200 Block of Sunrise Ave</strong> — closest option to the hotel. ParkMobile street parking; meters are typically active 9 AM–5 PM, so this may work for overnight parking if posted signs allow.</p>
+    <p><strong>Sunset Ave, 200 &amp; 300 Blocks</strong> — nearby ParkMobile street parking, just a short walk from the hotel.</p>
+    <p><strong>Bradley Place</strong> — nearby ParkMobile street parking, about a 5–7 minute walk.</p>
+    <p><strong>Seminole Ave / Park Ave / Main Street</strong> — additional nearby ParkMobile street parking within walking distance.</p>
+    <p><strong>Royal Poinciana Way / North County Road area</strong> — nearby ParkMobile street parking, about a 5–10 minute walk depending on the exact space.</p>
+  </article>
 </div>
 </section>
 
