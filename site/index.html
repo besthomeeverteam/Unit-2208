@@ -503,6 +503,1052 @@ p{line-height:1.7;margin:0}
   }
 }
 
+/* v46: softer travel-guide redesign with richer motion */
+:root{
+  --deep:#033f4a;
+  --teal:#009aaa;
+  --soft:#88e4df;
+  --pink:#ffb2c7;
+  --coral:#ff9b8f;
+  --sand:#fff8ed;
+  --mist:#e4fbf8;
+  --ink:#536477;
+  --card:rgba(255,255,255,.88);
+  --ring:1px solid rgba(255,255,255,.54);
+  --shadow:0 24px 70px rgba(5,55,66,.16);
+}
+body{
+  background:
+    linear-gradient(180deg,rgba(0,154,170,.18),rgba(255,248,237,.92) 36%,rgba(228,251,248,.88)),
+    url("front-hero-living.jpg") center top/cover fixed;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-2;
+  background:linear-gradient(180deg,rgba(255,255,255,.76),rgba(255,255,255,.92) 48%,rgba(228,251,248,.88));
+}
+.nav{
+  border:1px solid rgba(255,255,255,.68);
+  background:rgba(255,255,255,.72);
+  border-radius:999px;
+  box-shadow:0 22px 55px rgba(4,74,86,.13);
+}
+.nav button{
+  border-radius:999px;
+  transition:transform .22s ease, background .22s ease, color .22s ease, box-shadow .22s ease;
+}
+.nav button:hover{transform:translateY(-2px);background:rgba(232,251,253,.74);color:var(--deep)}
+.nav button.active{background:linear-gradient(135deg,#eafffb,#d8f4ff);box-shadow:0 10px 24px rgba(0,154,170,.14)}
+.resort-hero{
+  min-height:760px;
+  border-radius:0;
+  clip-path:polygon(0 0,100% 0,100% 91%,86% 100%,0 95%);
+  border:0;
+  box-shadow:0 34px 90px rgba(4,55,65,.25);
+  background:#034b58;
+}
+.resort-bg img{filter:saturate(1.12) contrast(1.05) brightness(.92)}
+.resort-bg::after{
+  background:
+    radial-gradient(circle at 44% 26%,rgba(255,255,255,.22) 0 2px,transparent 3px) 0 0/26px 26px,
+    linear-gradient(90deg,rgba(0,94,111,.82) 0%,rgba(0,126,139,.58) 39%,rgba(3,63,74,.2) 76%),
+    linear-gradient(180deg,rgba(1,28,35,.18),rgba(1,28,35,.34));
+}
+.resort-top{padding:30px clamp(22px,3vw,48px) 0}
+.hero-mini-links span{
+  padding:9px 13px;
+  border-radius:999px;
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.28);
+  backdrop-filter:blur(12px);
+}
+.resort-center{
+  position:relative;
+  max-width:760px;
+  padding:74px clamp(22px,4vw,62px) 190px;
+}
+.resort-center::before{
+  content:"";
+  position:absolute;
+  left:clamp(10px,2vw,28px);
+  top:70px;
+  width:2px;
+  height:300px;
+  background:linear-gradient(180deg,#fff,rgba(255,255,255,.08));
+}
+.hero-overline{color:#bff8f4;text-shadow:0 8px 20px rgba(0,0,0,.2)}
+.hero-display{
+  letter-spacing:0;
+  filter:drop-shadow(0 20px 34px rgba(0,0,0,.22));
+}
+.hero-display .royal,.hero-display .suite{color:#fff}
+.hero-display .king{
+  color:transparent;
+  -webkit-text-stroke:1.5px rgba(255,255,255,.94);
+  text-shadow:none;
+}
+.hero-copy{max-width:560px;color:rgba(255,255,255,.88)}
+.cta{
+  min-width:176px;
+  min-height:50px;
+  border-radius:0;
+  background:linear-gradient(135deg,#033f4a,#009aaa);
+  box-shadow:0 18px 34px rgba(0,79,91,.26);
+  transition:transform .24s ease, box-shadow .24s ease, filter .24s ease;
+}
+.cta:hover{transform:translateY(-3px);box-shadow:0 22px 44px rgba(0,79,91,.33);filter:saturate(1.08)}
+.cta.ghost{background:rgba(255,255,255,.14)}
+.resort-thumbs{
+  top:auto;
+  right:clamp(20px,4vw,72px);
+  bottom:82px;
+  width:min(640px,46vw);
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  align-items:end;
+  gap:16px;
+}
+.thumb-card{
+  border-radius:0;
+  padding:0;
+  overflow:hidden;
+  background:rgba(255,255,255,.94);
+  box-shadow:0 22px 44px rgba(2,36,45,.28);
+  transform:translateY(calc(var(--thumb-shift, 0px))) rotate(var(--thumb-tilt, 0deg));
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.thumb-card:nth-child(1){--thumb-shift:-26px;--thumb-tilt:-1.5deg}
+.thumb-card:nth-child(2){--thumb-shift:12px;--thumb-tilt:1.25deg}
+.thumb-card:nth-child(3){--thumb-shift:-8px;--thumb-tilt:-.75deg}
+.thumb-card:hover{transform:translateY(calc(var(--thumb-shift, 0px) - 8px)) rotate(0deg);box-shadow:0 28px 54px rgba(2,36,45,.32)}
+.thumb-card img{height:190px;border-radius:0}
+.thumb-card strong{font-size:20px;padding:16px 16px 2px}
+.thumb-card span{padding:0 16px 18px}
+.resort-address{
+  left:clamp(22px,4vw,62px);
+  bottom:76px;
+  border-radius:0;
+  background:rgba(3,63,74,.54);
+}
+.resort-wave{display:none}
+.service-badges{
+  margin:-58px auto 0;
+  max-width:1380px;
+  gap:16px;
+}
+.service-pill,.card,.contact-chip,.parking-item{
+  border-radius:0 28px 0 28px;
+  background:rgba(255,255,255,.82);
+  backdrop-filter:blur(18px);
+}
+.service-pill{
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.service-pill:hover{transform:translateY(-5px);box-shadow:0 28px 58px rgba(5,55,66,.18)}
+.section{margin-top:64px}
+.page.active .logo-img,
+.page.active h1,
+.page.active .subtitle,
+.page.active .section{
+  animation:softRise .72s cubic-bezier(.2,.72,.18,1) both;
+}
+.page.active .subtitle{animation-delay:.06s}
+.page.active .section{animation-delay:.1s}
+@keyframes softRise{
+  from{opacity:0;transform:translateY(24px) scale(.985)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+.quick,.info-card,.family-card,.family-panel,.parking-summary,.place{
+  opacity:0;
+  transform:translateY(28px);
+}
+.page.active .quick,
+.page.active .info-card,
+.page.active .family-card,
+.page.active .family-panel,
+.page.active .parking-summary,
+.page.active .place,
+.revealed{
+  animation:cardIn .72s cubic-bezier(.2,.72,.18,1) both;
+  animation-delay:calc(var(--i, 0) * 70ms);
+}
+.quick:nth-child(1),.info-card:nth-child(1){--i:1}
+.quick:nth-child(2),.info-card:nth-child(2){--i:2}
+.quick:nth-child(3),.info-card:nth-child(3){--i:3}
+.quick:nth-child(4),.info-card:nth-child(4){--i:4}
+.quick:nth-child(5),.info-card:nth-child(5){--i:5}
+.quick:nth-child(6),.info-card:nth-child(6){--i:6}
+@keyframes cardIn{
+  from{opacity:0;transform:translateY(28px) rotateX(5deg)}
+  to{opacity:1;transform:translateY(0) rotateX(0)}
+}
+.carousel-track{
+  grid-auto-columns:minmax(310px,382px);
+  gap:24px;
+  padding:16px 8px 24px;
+}
+.place{
+  min-height:470px;
+  border-radius:0 34px 0 34px;
+  transition:transform .28s ease, box-shadow .28s ease, filter .28s ease;
+}
+.place:hover{
+  transform:translateY(-10px) rotate(-.35deg);
+  box-shadow:0 34px 76px rgba(5,55,66,.22);
+  filter:saturate(1.04);
+}
+.place-img{aspect-ratio:4/3}
+.place-content{padding:28px 24px 24px}
+.icon-bubble{
+  border-radius:0 18px 0 18px;
+  background:linear-gradient(135deg,#ffffff,#e6fbfb);
+}
+.map-link{letter-spacing:.02em}
+.carousel-btn{
+  border-radius:0 18px 0 18px;
+  background:rgba(255,255,255,.92);
+}
+.contact-chip{transition:transform .22s ease, box-shadow .22s ease}
+.contact-chip:hover{transform:translateY(-4px);box-shadow:0 26px 56px rgba(5,55,66,.18)}
+@media (max-width:1180px){
+  .resort-hero{clip-path:polygon(0 0,100% 0,100% 96%,0 100%)}
+  .resort-thumbs{width:auto;grid-template-columns:repeat(3,1fr);padding:0 24px 30px}
+  .thumb-card{transform:none}
+  .thumb-card img{height:142px}
+  .resort-address{margin:0 24px 30px}
+}
+@media (max-width:860px){
+  .nav{border-radius:24px}
+  .resort-hero{
+    min-height:670px !important;
+    max-height:none !important;
+    clip-path:none;
+    border-radius:0 32px 0 32px;
+  }
+  .resort-center::before{display:none}
+  .hero-display .king{-webkit-text-stroke:1px rgba(255,255,255,.95)}
+  .service-badges{margin:18px auto 0}
+  .service-pill,.card,.contact-chip,.parking-item,.place{border-radius:0 22px 0 22px}
+  .carousel-track{grid-auto-columns:86%;gap:18px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;scroll-behavior:auto !important;transition-duration:.01ms !important}
+}
+
+/* v53: center home preview cards vertically in hero */
+@media (min-width:1181px){
+  #home .resort-thumbs{
+    top:50%;
+    bottom:auto;
+    transform:translateY(-38%);
+  }
+}
+@media (max-width:1180px){
+  #home .resort-hero{
+    min-height:calc(100vh - 112px) !important;
+    max-height:820px;
+  }
+  #home .resort-center{
+    padding-top:34px !important;
+    padding-bottom:28px !important;
+  }
+  #home .resort-address{
+    position:relative !important;
+    left:auto !important;
+    bottom:auto !important;
+    margin:10px 24px 18px !important;
+    max-width:calc(100% - 48px);
+    width:fit-content;
+    z-index:5;
+  }
+  #home .service-badges{
+    margin:18px auto 0 !important;
+  }
+}
+
+/* v54: sitewide motion layer */
+@keyframes heroZoom{
+  from{transform:scale(1)}
+  to{transform:scale(1.08)}
+}
+@keyframes logoFloat{
+  0%,100%{transform:translateY(0) rotate(0deg)}
+  50%{transform:translateY(-7px) rotate(-.6deg)}
+}
+@keyframes softPulse{
+  0%,100%{box-shadow:0 24px 70px rgba(5,55,66,.16)}
+  50%{box-shadow:0 30px 82px rgba(0,121,145,.22)}
+}
+@keyframes cardDrift{
+  0%,100%{transform:translateY(0) rotate(var(--drift-rotate,0deg))}
+  50%{transform:translateY(-5px) rotate(var(--drift-rotate,0deg))}
+}
+@keyframes shimmerLine{
+  from{transform:translateX(-120%)}
+  to{transform:translateX(220%)}
+}
+@keyframes logoEntrance{
+  0%{opacity:0;transform:translateY(18px) scale(.92) rotate(-2deg)}
+  60%{opacity:1;transform:translateY(-4px) scale(1.04) rotate(.8deg)}
+  100%{opacity:1;transform:translateY(0) scale(1) rotate(0deg)}
+}
+@keyframes logoGlow{
+  0%,100%{filter:drop-shadow(0 8px 18px rgba(6,136,154,.12))}
+  50%{filter:drop-shadow(0 14px 28px rgba(0,154,170,.26))}
+}
+#home .resort-bg img{
+  transform-origin:center;
+  animation:heroZoom 18s ease-in-out infinite alternate;
+  will-change:transform;
+}
+.logo-img,
+.front-logo{
+  animation:logoFloat 5.8s ease-in-out infinite;
+  will-change:transform;
+}
+.nav{
+  animation:softPulse 6.8s ease-in-out infinite;
+}
+.page.active:not(#home) > .logo-img,
+.page.active .stay-copy-panel .logo-img,
+.page.active .contact-hero-panel .logo-img{
+  animation:logoEntrance .85s cubic-bezier(.2,.72,.18,1) both, logoFloat 5.8s ease-in-out .85s infinite, logoGlow 4.8s ease-in-out .85s infinite;
+}
+.cta,
+.contact-chip,
+.service-pill,
+.quick,
+.place,
+.thumb-card{
+  will-change:transform;
+}
+#home .thumb-card:nth-child(1){animation:cardDrift 6.2s ease-in-out infinite}
+#home .thumb-card:nth-child(2){animation:cardDrift 6.8s ease-in-out infinite .4s}
+#home .thumb-card:nth-child(3){animation:cardDrift 6.4s ease-in-out infinite .8s}
+#home .thumb-card:nth-child(1){--drift-rotate:-2.2deg}
+#home .thumb-card:nth-child(2){--drift-rotate:1.4deg}
+#home .thumb-card:nth-child(3){--drift-rotate:-1.1deg}
+#home .thumb-card:hover{
+  transform:translateY(calc(var(--thumb-shift, 0px) - 10px)) rotate(0deg) scale(1.015);
+}
+.orange-line{
+  position:relative;
+  overflow:hidden;
+}
+.orange-line::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  width:44%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.85),transparent);
+  animation:shimmerLine 3.8s ease-in-out infinite;
+}
+.place:hover,
+.contact-chip:hover,
+.service-pill:hover,
+.cta:hover{
+  transition-duration:.34s;
+}
+.contact-photo-stack img:hover{
+  transform:translateY(-8px) scale(1.025) rotate(0deg);
+}
+@media (prefers-reduced-motion:reduce){
+  #home .resort-bg img,
+  .logo-img,
+  .front-logo,
+  .nav,
+  #home .thumb-card,
+  .orange-line::after{
+    animation:none !important;
+  }
+}
+
+/* v55: richer box hover interactions */
+.card,
+.quick,
+.info-card,
+.parking-summary p,
+.contact-chip,
+.service-pill,
+.family-panel,
+.stay-host-strip,
+.stay-floating-note{
+  transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease, background .28s ease, filter .28s ease;
+}
+.card:hover,
+.quick:hover,
+.info-card:hover,
+.parking-summary p:hover,
+.contact-chip:hover,
+.service-pill:hover,
+.family-panel:hover,
+.stay-host-strip:hover,
+.stay-floating-note:hover{
+  transform:translateY(-7px) rotate(.35deg);
+  box-shadow:0 30px 72px rgba(0,96,118,.22);
+  border-color:rgba(0,154,170,.34);
+  filter:saturate(1.04);
+}
+.quick:nth-child(even):hover,
+.parking-summary p:nth-child(even):hover,
+.contact-chip:nth-child(even):hover,
+.info-card:nth-child(even):hover{
+  transform:translateY(-7px) rotate(-.35deg);
+}
+.card:hover img,
+.place:hover .place-img,
+.service-pill:hover img{
+  filter:saturate(1.08) contrast(1.03);
+}
+.stay-command-panel .quick:hover{
+  background:linear-gradient(145deg,rgba(0,128,154,.66),rgba(0,190,210,.44));
+}
+.contact-stage .contact-chip:hover{
+  background:rgba(255,255,255,.94);
+}
+
+/* v47: dense Stay and Contact pages with matching immersive theme */
+#stay > .stay-grid,
+#stay > .quick-grid,
+#contact > .contact-layout{
+  display:none !important;
+}
+#stay .parking-section{margin-top:30px !important}
+.stay-escape,
+.contact-stage{
+  position:relative;
+  min-height:calc(100vh - 146px);
+  margin-top:18px;
+  overflow:hidden;
+  isolation:isolate;
+  background:
+    linear-gradient(120deg,rgba(3,63,74,.9),rgba(0,154,170,.58) 45%,rgba(255,248,237,.86)),
+    url("front-hero-living.jpg") center/cover;
+  box-shadow:0 34px 90px rgba(4,55,65,.21);
+  border:1px solid rgba(255,255,255,.56);
+  border-radius:0 42px 0 42px;
+}
+.stay-escape::before,
+.contact-stage::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:
+    radial-gradient(circle at 48% 30%,rgba(255,255,255,.28) 0 2px,transparent 3px) 0 0/28px 28px,
+    linear-gradient(180deg,rgba(1,29,36,.16),rgba(1,29,36,.3));
+}
+.stay-escape{
+  display:grid;
+  grid-template-columns:minmax(330px,.86fr) minmax(460px,1.05fr) minmax(360px,.95fr);
+  gap:clamp(18px,2.4vw,42px);
+  align-items:center;
+  padding:clamp(24px,4vw,58px);
+}
+.stay-copy-panel,
+.contact-hero-panel{
+  color:#fff;
+  max-width:620px;
+}
+.stay-copy-panel .logo-img,
+.contact-hero-panel .logo-img{
+  filter:drop-shadow(0 12px 24px rgba(0,0,0,.2));
+}
+.stay-copy-panel .hero-overline{color:#bff8f4;margin-bottom:12px}
+.stay-copy-panel h1,
+.contact-hero-panel h1{color:#fff;text-shadow:0 18px 38px rgba(0,0,0,.24)}
+.stay-copy-panel .script,
+.contact-hero-panel .script{color:#bff8f4}
+.stay-copy-panel .body-copy,
+.contact-hero-panel .body-copy,
+.contact-hero-panel .subtitle,
+.contact-hero-panel .small-note{
+  color:rgba(255,255,255,.9);
+  text-shadow:0 8px 20px rgba(0,0,0,.18);
+}
+.stay-host-strip{
+  display:grid;
+  grid-template-columns:82px 1fr;
+  gap:16px;
+  align-items:center;
+  margin-top:24px;
+  padding:12px;
+  max-width:390px;
+  color:#fff;
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.32);
+  backdrop-filter:blur(16px);
+  border-radius:0 24px 0 24px;
+}
+.stay-host-strip img{
+  width:82px;
+  height:82px;
+  object-fit:cover;
+  object-position:center 18%;
+  border-radius:0 20px 0 20px;
+}
+.stay-host-strip .hello{font-size:48px;color:#bff8f4;margin:0}
+.stay-host-strip p{font-weight:800;line-height:1.35}
+.stay-media-collage{
+  position:relative;
+  min-height:590px;
+}
+.stay-media-collage img{
+  position:absolute;
+  object-fit:cover;
+  box-shadow:0 26px 62px rgba(1,38,48,.34);
+  border:5px solid rgba(255,255,255,.82);
+  background:#fff;
+}
+.stay-photo-main{
+  inset:20px 4% 36px 10%;
+  width:82%;
+  height:calc(100% - 56px);
+  border-radius:0 34px 0 34px;
+}
+.stay-photo-small{
+  width:42%;
+  height:190px;
+  border-radius:0 26px 0 26px;
+}
+.stay-photo-a{left:0;bottom:30px;transform:rotate(-2deg)}
+.stay-photo-b{right:0;top:0;transform:rotate(2deg)}
+.stay-floating-note{
+  position:absolute;
+  right:4%;
+  bottom:0;
+  display:grid;
+  gap:4px;
+  min-width:220px;
+  padding:18px 20px;
+  background:rgba(191,248,244,.9);
+  color:var(--deep);
+  box-shadow:0 20px 42px rgba(1,38,48,.28);
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:0 24px 0 24px;
+}
+.stay-floating-note span{
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+.stay-floating-note strong{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:27px;
+  line-height:1;
+  text-transform:uppercase;
+  color:var(--deep);
+}
+.stay-floating-note small{font-weight:800;color:#4f6571}
+.stay-command-panel{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+  align-content:center;
+}
+.stay-command-panel .quick{
+  min-height:150px;
+  padding:18px;
+  text-align:left;
+  color:#fff;
+  border:1px solid rgba(255,255,255,.34);
+  background:rgba(3,63,74,.38);
+  backdrop-filter:blur(18px);
+  box-shadow:0 18px 42px rgba(1,38,48,.2);
+  border-radius:0 24px 0 24px;
+}
+.stay-command-panel .quick:nth-child(1),
+.stay-command-panel .quick:nth-child(4),
+.stay-command-panel .quick:nth-child(5){grid-column:span 2}
+.stay-command-panel .quick .icon-svg{
+  margin:0 0 12px;
+  color:#bff8f4;
+}
+.stay-command-panel .quick h3{color:#fff;font-size:22px}
+.stay-command-panel .quick p{color:rgba(255,255,255,.86);font-size:14px}
+.stay-command-panel .quick .big{color:#bff8f4}
+.contact-stage{
+  display:grid;
+  grid-template-columns:minmax(360px,.8fr) minmax(330px,.62fr) minmax(520px,1fr);
+  gap:clamp(18px,2.5vw,38px);
+  align-items:center;
+  padding:clamp(24px,4vw,58px);
+}
+.contact-photo-stack{
+  position:relative;
+  min-height:550px;
+}
+.contact-photo-stack img{
+  position:absolute;
+  width:64%;
+  height:270px;
+  object-fit:cover;
+  object-position:center 18%;
+  border:5px solid rgba(255,255,255,.84);
+  box-shadow:0 26px 62px rgba(1,38,48,.34);
+  border-radius:0 34px 0 34px;
+  cursor:pointer;
+  transition:transform .28s ease, z-index .28s ease, box-shadow .28s ease;
+}
+.contact-photo-stack img:first-child{left:0;top:34px;transform:rotate(-2deg);z-index:1}
+.contact-photo-stack img:nth-child(2){right:0;top:118px;transform:rotate(2deg);z-index:2}
+.contact-photo-stack img:nth-child(3){left:12%;bottom:42px;transform:rotate(-1.5deg);z-index:3}
+.contact-photo-stack img.is-front{
+  z-index:5;
+  transform:translateY(-10px) scale(1.03) rotate(0deg);
+  box-shadow:0 34px 72px rgba(1,38,48,.42);
+}
+.contact-badge{
+  position:absolute;
+  left:12%;
+  bottom:10px;
+  z-index:8;
+  width:min(340px,76%);
+  max-width:none;
+  padding:18px 20px;
+  color:var(--deep);
+  background:rgba(191,248,244,.92);
+  box-shadow:0 20px 42px rgba(1,38,48,.28);
+  border-radius:0 24px 0 24px;
+  font-weight:900;
+}
+.photo-click-cue{
+  position:absolute;
+  z-index:9;
+  appearance:none;
+  border:1px solid rgba(255,255,255,.68);
+  background:rgba(255,255,255,.9);
+  color:var(--deep);
+  padding:9px 14px;
+  border-radius:999px;
+  font:900 12px/1 'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  box-shadow:0 12px 28px rgba(1,38,48,.24);
+  cursor:pointer;
+  transition:transform .24s ease, opacity .24s ease, left .32s ease, top .32s ease;
+  animation:cueBounce 1.7s ease-in-out infinite;
+}
+.photo-click-cue:hover{transform:translateY(-3px) scale(1.04)}
+@keyframes cueBounce{
+  0%,100%{translate:0 0}
+  50%{translate:0 -5px}
+}
+.contact-details-panel{
+  display:grid;
+  gap:18px;
+}
+.contact-stage .family-panel{
+  padding:22px;
+  color:var(--deep);
+  background:rgba(255,255,255,.84);
+  border:1px solid rgba(255,255,255,.6);
+  box-shadow:0 24px 58px rgba(1,38,48,.19);
+  backdrop-filter:blur(18px);
+  border-radius:0 30px 0 30px;
+}
+.contact-stage .family-panel img{display:none}
+.contact-stage .contact-chip{
+  min-height:88px;
+  background:rgba(255,255,255,.86);
+  border-color:rgba(255,255,255,.62);
+}
+@media (max-width:1400px){
+  .stay-escape,
+  .contact-stage{grid-template-columns:1fr 1fr}
+  .stay-command-panel,
+  .contact-details-panel{grid-column:1 / -1}
+  .stay-command-panel{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .stay-command-panel .quick:nth-child(1),
+  .stay-command-panel .quick:nth-child(4),
+  .stay-command-panel .quick:nth-child(5){grid-column:span 1}
+}
+@media (max-width:860px){
+  .stay-escape,
+  .contact-stage{
+    grid-template-columns:1fr;
+    min-height:auto;
+    padding:22px;
+    border-radius:0 28px 0 28px;
+  }
+  .stay-media-collage{min-height:430px}
+  .stay-photo-main{inset:20px 0 70px 0;width:100%;height:320px}
+  .stay-photo-small{height:130px}
+  .stay-photo-a{left:0;bottom:26px}
+  .stay-photo-b{right:0;top:0}
+  .stay-floating-note{right:0;bottom:0;min-width:190px}
+  .stay-command-panel{grid-template-columns:1fr}
+  .stay-command-panel .quick:nth-child(n){grid-column:auto}
+  .contact-photo-stack{min-height:420px}
+  .contact-photo-stack img{height:255px}
+.contact-stage .family-panel{grid-template-columns:1fr}
+}
+
+/* v48: Stay page color + heading polish */
+.nowrap{white-space:nowrap}
+#stay .stay-escape{
+  background:
+    linear-gradient(120deg,rgba(105,88,69,.92),rgba(214,174,132,.68) 48%,rgba(255,248,237,.9)),
+    url("front-thumb-king-v13.jpg") center/cover;
+}
+#stay .stay-escape::before{
+  background:
+    radial-gradient(circle at 48% 30%,rgba(255,255,255,.24) 0 2px,transparent 3px) 0 0/28px 28px,
+    linear-gradient(180deg,rgba(56,42,32,.2),rgba(56,42,32,.36));
+}
+#stay .stay-copy-panel .hero-overline,
+#stay .stay-copy-panel .script,
+#stay .stay-host-strip .hello,
+#stay .stay-command-panel .quick .icon-svg,
+#stay .stay-command-panel .quick .big{
+  color:#ffe2bd;
+}
+#stay .stay-host-strip,
+#stay .stay-command-panel .quick{
+  background:rgba(70,54,43,.42);
+  border-color:rgba(255,226,189,.36);
+}
+#stay .stay-floating-note{
+  background:rgba(255,226,189,.93);
+}
+#stay .parking-section h2{
+  white-space:nowrap;
+  font-size:clamp(30px,3vw,52px);
+}
+@media (max-width:860px){
+  #stay .parking-section h2{white-space:normal}
+}
+
+/* v49: tighter Stay layout + richer parking */
+#stay.page{min-height:0}
+#stay .stay-escape{
+  min-height:auto;
+  align-items:stretch;
+  padding:clamp(20px,3vw,42px);
+}
+#stay .stay-copy-panel{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+#stay .stay-copy-panel .body-copy{line-height:1.55}
+#stay .stay-host-strip{
+  grid-template-columns:150px 1fr;
+  max-width:520px;
+  min-height:170px;
+  padding:14px;
+  margin-top:18px;
+}
+#stay .stay-host-strip img{
+  width:150px;
+  height:150px;
+}
+#stay .stay-host-strip .hello{font-size:58px}
+#stay .stay-media-collage{
+  min-height:500px;
+  margin-block:auto;
+}
+#stay .stay-command-panel{align-content:stretch}
+#stay .stay-command-panel .quick{
+  min-height:126px;
+  padding:16px;
+}
+#stay .stay-command-panel .quick h3{font-size:20px}
+#stay .parking-section{
+  max-width:1500px;
+  padding:0;
+  background:transparent;
+  border:0;
+  box-shadow:none;
+  border-radius:0;
+}
+#stay .parking-summary{
+  max-width:none;
+  display:grid;
+  grid-template-columns:repeat(5,minmax(170px,1fr));
+  gap:14px;
+  padding:0 !important;
+  background:transparent;
+  border:0;
+  box-shadow:none;
+}
+#stay .parking-summary p{
+  position:relative;
+  min-height:178px;
+  margin:0;
+  padding:48px 16px 16px;
+  color:#315d68;
+  font-size:14.5px;
+  line-height:1.45;
+  background:linear-gradient(145deg,rgba(230,252,252,.92),rgba(202,243,246,.86));
+  border:1px solid rgba(0,154,170,.16);
+  box-shadow:0 18px 42px rgba(0,96,118,.13);
+  backdrop-filter:blur(14px);
+  border-radius:0 24px 0 24px;
+}
+#stay .parking-summary p::before{
+  content:"P";
+  position:absolute;
+  left:16px;
+  top:14px;
+  width:26px;
+  height:26px;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  background:#009aaa;
+  font-weight:900;
+  border-radius:50%;
+}
+#stay .parking-summary strong{
+  display:block;
+  margin-bottom:8px;
+  color:#044c5a;
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:22px;
+  line-height:.98;
+  text-transform:uppercase;
+}
+#stay .parking-summary p:last-child strong{
+  font-size:20px;
+  line-height:1;
+}
+@media (max-width:1400px){
+  #stay .stay-host-strip{grid-template-columns:120px 1fr;min-height:140px}
+  #stay .stay-host-strip img{width:120px;height:120px}
+  #stay .parking-summary{grid-template-columns:repeat(2,minmax(220px,1fr))}
+}
+@media (max-width:860px){
+  #stay .stay-host-strip{grid-template-columns:108px 1fr;min-height:128px}
+  #stay .stay-host-strip img{width:108px;height:108px}
+  #stay .stay-host-strip .hello{font-size:44px}
+  #stay .stay-media-collage{min-height:390px}
+  #stay .parking-section{padding:24px 16px}
+  #stay .parking-summary{grid-template-columns:1fr}
+  #stay .parking-summary p{min-height:auto}
+}
+
+/* v51: cleaner Contact page layout and interactive photo stack */
+#contact .contact-stage{
+  grid-template-columns:minmax(410px,.82fr) minmax(380px,.68fr) minmax(560px,1.08fr);
+  gap:clamp(18px,2vw,30px);
+  background:
+    linear-gradient(105deg,rgba(2,75,91,.86),rgba(0,147,169,.46) 48%,rgba(230,250,248,.9)),
+    url("front-hero-living.jpg") center/cover;
+}
+#contact .contact-stage::before{
+  background:linear-gradient(180deg,rgba(0,48,62,.08),rgba(0,82,98,.22));
+}
+#contact .contact-hero-panel{
+  padding-left:clamp(8px,1.4vw,22px);
+  max-width:560px;
+}
+#contact .contact-hero-panel .share-title{
+  font-size:clamp(56px,5.2vw,92px);
+}
+#contact .contact-details-panel{
+  align-self:stretch;
+  display:grid;
+  grid-template-rows:1fr auto;
+  min-width:0;
+}
+#contact .contact-stage .family-panel{
+  grid-template-columns:1fr;
+  align-content:center;
+  padding:clamp(22px,2.6vw,42px);
+}
+#contact .contact-stage .family-panel h2{
+  font-size:clamp(46px,4vw,76px);
+}
+#contact .contact-stage .family-panel .body-copy{
+  max-width:none;
+  font-size:clamp(17px,1.1vw,20px);
+  line-height:1.55;
+}
+#contact .contact-stage .contact-chips{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+}
+#contact .contact-stage .contact-chip{
+  min-width:0;
+  min-height:96px;
+  padding:18px 18px;
+  font-size:clamp(16px,1vw,21px);
+  line-height:1.08;
+  overflow:hidden;
+}
+#contact .contact-stage .contact-chip span:last-child{
+  min-width:0;
+  overflow-wrap:normal;
+  word-break:normal;
+  line-break:auto;
+  hyphens:none;
+}
+#contact .contact-stage .phone-chip span:last-child{
+  white-space:normal;
+  overflow-wrap:anywhere;
+  font-size:clamp(22px,1.45vw,28px);
+}
+@media (max-width:1400px){
+  #contact .contact-stage{grid-template-columns:1fr 1fr}
+  #contact .contact-details-panel{grid-column:1 / -1}
+}
+@media (max-width:860px){
+  #contact .contact-stage{grid-template-columns:1fr}
+  #contact .contact-stage .contact-chips{grid-template-columns:1fr}
+  #contact .contact-stage .phone-chip span:last-child{white-space:normal}
+  #contact .contact-photo-stack{min-height:520px}
+  #contact .contact-photo-stack img{width:72%;height:220px}
+}
+
+/* v52: Contact spacing and readability refinements */
+#contact .contact-stage{
+  min-height:auto;
+  align-items:start;
+  background:
+    linear-gradient(105deg,rgba(35,139,153,.72),rgba(119,203,207,.5) 48%,rgba(234,251,249,.88)),
+    url("front-hero-living.jpg") center/cover;
+}
+#contact .contact-hero-panel{
+  padding-top:clamp(10px,2vw,28px);
+}
+#contact .contact-hero-panel .social-line{
+  gap:10px;
+  color:#fff;
+}
+#contact .contact-hero-panel .social-line a{
+  padding:9px 11px;
+  color:#fff;
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:999px;
+  text-shadow:0 6px 18px rgba(0,0,0,.24);
+  backdrop-filter:blur(10px);
+}
+#contact .contact-details-panel{
+  max-width:620px;
+  justify-self:start;
+  align-self:start;
+}
+#contact .contact-stage .family-panel{
+  min-height:0;
+  align-content:start;
+  padding:clamp(24px,2.8vw,38px);
+}
+#contact .contact-stage .family-panel h2{
+  font-size:clamp(42px,3.4vw,64px);
+}
+#contact .contact-stage .family-panel .body-copy{
+  font-size:clamp(16px,1vw,18px);
+}
+#contact .contact-stage .contact-chip{
+  min-height:82px;
+}
+#contact .contact-photo-stack{
+  overflow:hidden;
+  border-radius:0 34px 0 34px;
+  padding-bottom:20px;
+}
+#contact .contact-photo-stack img{
+  border:0;
+}
+@media (max-width:1400px){
+  #contact .contact-details-panel{
+    max-width:none;
+    justify-self:stretch;
+  }
+}
+
+/* v50: ocean Stay page and unclipped title */
+#stay .stay-escape{
+  grid-template-columns:minmax(360px,.95fr) minmax(430px,1fr) minmax(360px,.92fr);
+  gap:clamp(14px,2vw,30px);
+  background:
+    linear-gradient(115deg,rgba(2,76,93,.92),rgba(0,155,181,.64) 50%,rgba(224,250,250,.88)),
+    url("front-pill-pool.png") center/cover;
+}
+#stay .stay-escape::before{
+  background:linear-gradient(180deg,rgba(0,48,62,.12),rgba(0,76,93,.24));
+}
+#stay .stay-copy-panel{max-width:none}
+#stay .stay-title-new{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+  max-width:720px;
+  overflow:visible;
+  line-height:.88;
+}
+#stay .stay-title-new .script{
+  font-size:clamp(48px,4.6vw,82px);
+  line-height:.72;
+  color:#c8fbf7;
+  text-shadow:0 16px 34px rgba(0,0,0,.2);
+}
+#stay .stay-to-your{
+  align-self:flex-start;
+  font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  font-size:clamp(17px,1.3vw,24px);
+  line-height:1;
+  letter-spacing:.18em;
+  font-weight:900;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.86);
+}
+#stay .stay-palm,
+#stay .stay-escape-word{
+  display:block;
+  width:100%;
+  color:#fff;
+  font-size:clamp(48px,4.8vw,84px);
+  line-height:.86;
+  letter-spacing:.015em;
+  text-shadow:0 18px 38px rgba(0,0,0,.24);
+}
+#stay .stay-palm{
+  white-space:nowrap;
+}
+#stay .stay-escape-word{
+  color:transparent;
+  -webkit-text-stroke:1.2px rgba(255,255,255,.95);
+}
+#stay .stay-copy-panel .hero-overline,
+#stay .stay-copy-panel .script,
+#stay .stay-host-strip .hello,
+#stay .stay-command-panel .quick .icon-svg,
+#stay .stay-command-panel .quick .big{
+  color:#c8fbf7;
+}
+#stay .stay-host-strip{
+  background:rgba(0,92,113,.36);
+  border-color:rgba(200,251,247,.36);
+}
+#stay .stay-command-panel .quick{
+  background:linear-gradient(145deg,rgba(0,105,132,.58),rgba(0,172,194,.36));
+  border-color:rgba(200,251,247,.38);
+  box-shadow:0 18px 42px rgba(0,72,91,.22);
+}
+#stay .stay-command-panel .quick:nth-child(6){
+  grid-column:span 2;
+}
+#stay .stay-floating-note{
+  background:rgba(200,251,247,.92);
+}
+@media (max-width:1400px){
+  #stay .stay-escape{grid-template-columns:1fr 1fr}
+  #stay .stay-command-panel .quick:nth-child(6){grid-column:span 1}
+}
+@media (max-width:860px){
+  #stay .stay-escape{grid-template-columns:1fr}
+  #stay .stay-palm,
+  #stay .stay-escape-word{font-size:clamp(44px,13vw,66px)}
+  #stay .stay-to-your{align-self:flex-start}
+}
+
 </style>
 </head>
 <body>
@@ -549,6 +1595,36 @@ p{line-height:1.7;margin:0}
 </section>
 
 <section id="stay" class="page">
+  <div class="stay-escape section">
+    <div class="stay-copy-panel">
+      <img class="logo-img logo-small" src="palm-beach-getaways-logo.png" alt="Palm Beach Getaways logo">
+      <p class="hero-overline">Suite essentials</p>
+      <h1 class="stay-title stay-title-new"><span class="script">Welcome</span><span class="stay-to-your">To Your</span><span class="stay-palm">Palm Beach</span><span class="stay-escape-word">Escape</span></h1>
+      <p class="body-copy">Inside the historic Palm Beach Hotel Condominium, The Royal Palm King Suite is designed for a polished yet easygoing island stay. From beach mornings to Worth Avenue strolls and sunset dinners, everything feels close and convenient.</p>
+      <div class="stay-host-strip">
+        <img src="host-family-guide.jpg" alt="The Horwitz family">
+        <div><div class="hello">Hello!</div><p>We are your hosts Josh and Maria.</p></div>
+      </div>
+    </div>
+    <div class="stay-media-collage" aria-label="Royal Palm King Suite photos">
+      <img class="stay-photo-main" src="https://a0.muscache.com/im/pictures/hosting/Hosting-1674098710678210237/original/652ef161-2451-43e5-97e3-963edad446b4.jpeg?im_w=1440" alt="Royal Palm King Suite bedroom" onerror="this.onerror=null;this.src='unit-bedroom.jpg';">
+      <img class="stay-photo-small stay-photo-a" src="front-thumb-living-v13.jpg" alt="Suite living area">
+      <img class="stay-photo-small stay-photo-b" src="front-thumb-kitchen-v13.jpg" alt="Suite kitchenette">
+      <div class="stay-floating-note">
+        <span>Home Base</span>
+        <strong>235 Sunrise Ave</strong>
+        <small>Unit 2208, Palm Beach</small>
+      </div>
+    </div>
+    <div class="stay-command-panel">
+      <article class="quick"><span class="icon-svg" data-icon="wifi"></span><h3>Wi-Fi</h3><p><b>Network:</b> Owner<br><b>Password:</b> l!ghtDay42</p></article>
+      <article class="quick"><span class="icon-svg" data-icon="doorIn"></span><h3>Check-In</h3><div class="big">3:00 PM</div></article>
+      <article class="quick"><span class="icon-svg" data-icon="doorOut"></span><h3>Check-Out</h3><div class="big">11:00 AM</div></article>
+      <article class="quick"><span class="icon-svg" data-icon="pin"></span><h3>Address</h3><p>Palm Beach Hotel Condominium<br>235 Sunrise Avenue, Unit 2208</p></article>
+      <article class="quick"><span class="icon-svg" data-icon="clipboard"></span><h3>Front Desk</h3><p>Proceed to the front desk and let them know you are checking into Unit 2208.</p></article>
+      <article class="quick"><span class="icon-svg" data-icon="bag"></span><h3>Bag Storage</h3><p>Coordinate with the front desk for bag drop before check-in or after checkout.</p></article>
+    </div>
+  </div>
   <div class="stay-grid section">
     <div>
       <img class="logo-img logo-small" src="palm-beach-getaways-logo.png" alt="Palm Beach Getaways logo">
@@ -578,7 +1654,7 @@ p{line-height:1.7;margin:0}
     <p><strong>Sunset Ave, 200 &amp; 300 Blocks</strong> — nearby ParkMobile street parking, just a short walk from the hotel.</p>
     <p><strong>Bradley Place</strong> — nearby ParkMobile street parking, about a 5–7 minute walk.</p>
     <p><strong>Seminole Ave / Park Ave / Main Street</strong> — additional nearby ParkMobile street parking within walking distance.</p>
-    <p><strong>Royal Poinciana Way / North County Road area</strong> — nearby ParkMobile street parking, about a 5–10 minute walk depending on the exact space.</p>
+    <p><strong>Royal Poinciana Way&nbsp;/ North County Road area</strong> — nearby ParkMobile street parking, about a 5–10 minute walk depending on the exact space.</p>
   </article>
 </div>
 </section>
@@ -639,6 +1715,42 @@ p{line-height:1.7;margin:0}
 </section>
 
 <section id="contact" class="page">
+  <div class="contact-stage section">
+    <div class="share-card plain-section contact-hero-panel">
+      <img class="logo-img logo-small" src="palm-beach-getaways-logo.png" alt="Palm Beach Getaways logo">
+      <h1 class="share-title">Thank <span class="script title-script">You</span></h1>
+      <p class="subtitle" style="margin-top:24px">How was your experience?</p>
+      <p class="body-copy" style="margin-top:22px">Your feedback helps us improve. When you have a great stay, we would be so grateful if you would leave a glowing review and tag us on social media.</p>
+      <div class="social-line">
+        <a target="_blank" href="https://www.instagram.com/palmbeachgetaways"><span class="icon-svg" data-icon="instagram"></span>@palmbeachgetaways</a>
+        <a target="_blank" href="https://www.instagram.com/myrealtorcouple"><span class="icon-svg" data-icon="instagram"></span>@myrealtorcouple</a>
+      </div>
+      <p class="small-note" style="margin-top:30px">Thank you for choosing Palm Beach Getaways. We hope to host you again soon.</p>
+    </div>
+    <div class="contact-photo-stack">
+      <img src="horwitz-family-red-22.jpg" alt="The Horwitz family in red outfits">
+      <img src="horwitz-family-red-12.jpg" alt="The Horwitz family portrait in red outfits">
+      <img src="horwitz-family-red-03.jpg" alt="The Horwitz family with duckling">
+      <button class="photo-click-cue" type="button" aria-label="Bring the next family photo forward">Click me</button>
+      <div class="contact-badge">Your hosts in sunny Palm City, FL</div>
+    </div>
+    <div class="contact-details-panel">
+      <div class="family-panel">
+        <img src="horwitz-family-3.jpg" alt="The Horwitz family">
+        <div>
+          <h2>The Horwitz Family</h2>
+          <div class="orange-line"></div>
+          <p class="body-copy">Hello and welcome! We are Josh and Maria Horwitz, proud parents to Genesee, Gideon, and Eliana, living in sunny Palm City, FL. Together, we lead the Best Home Ever real estate team and love serving our community, traveling, and helping others create a life they love. We are so happy to host you and hope you feel right at home. Please reach out anytime.</p>
+        </div>
+      </div>
+      <div class="contact-chips">
+        <a class="contact-chip" target="_blank" href="https://palmbeachgetaways.com"><span class="icon-svg" data-icon="globe"></span><span>PalmBeachGetaways<br>.com</span></a>
+        <a class="contact-chip" target="_blank" href="https://besthomeever.com"><span class="icon-svg" data-icon="globe"></span><span>BestHomeEver.com</span></a>
+        <a class="contact-chip" href="mailto:BestHomeEverTeam@gmail.com"><span class="icon-svg" data-icon="mail"></span><span>BestHomeEverTeam@<br>gmail.com</span></a>
+        <a class="contact-chip phone-chip" href="tel:15615706355"><span class="icon-svg" data-icon="phone"></span><span>(561) 570-6355</span></a>
+      </div>
+    </div>
+  </div>
   <div class="contact-layout section">
     <div class="share-card plain-section">
       <img class="logo-img logo-small" src="palm-beach-getaways-logo.png" alt="Palm Beach Getaways logo">
@@ -647,7 +1759,6 @@ p{line-height:1.7;margin:0}
       <p class="body-copy" style="margin-top:22px">Your feedback helps us improve. When you have a great stay, we would be so grateful if you would leave a glowing review and tag us on social media.</p>
       <div class="social-line">
         <a target="_blank" href="https://www.instagram.com/palmbeachgetaways"><span class="icon-svg" data-icon="instagram"></span>@palmbeachgetaways</a>
-        <span>|</span>
         <a target="_blank" href="https://www.instagram.com/myrealtorcouple"><span class="icon-svg" data-icon="instagram"></span>@myrealtorcouple</a>
       </div>
       <p class="small-note" style="margin-top:30px">Thank you for choosing Palm Beach Getaways — we hope to host you again soon.</p>
@@ -662,9 +1773,9 @@ p{line-height:1.7;margin:0}
         </div>
       </div>
       <div class="contact-chips">
-        <a class="contact-chip" target="_blank" href="https://palmbeachgetaways.com"><span class="icon-svg" data-icon="globe"></span><span>PalmBeachGetaways.com</span></a>
+        <a class="contact-chip" target="_blank" href="https://palmbeachgetaways.com"><span class="icon-svg" data-icon="globe"></span><span>PalmBeachGetaways<br>.com</span></a>
         <a class="contact-chip" target="_blank" href="https://besthomeever.com"><span class="icon-svg" data-icon="globe"></span><span>BestHomeEver.com</span></a>
-        <a class="contact-chip" href="mailto:BestHomeEverTeam@gmail.com"><span class="icon-svg" data-icon="mail"></span><span>BestHomeEverTeam@gmail.com</span></a>
+        <a class="contact-chip" href="mailto:BestHomeEverTeam@gmail.com"><span class="icon-svg" data-icon="mail"></span><span>BestHomeEverTeam@<br>gmail.com</span></a>
         <a class="contact-chip phone-chip" href="tel:15615706355"><span class="icon-svg" data-icon="phone"></span><span>(561) 570-6355</span></a>
       </div>
     </div>
@@ -695,22 +1806,68 @@ function insertIcons(){document.querySelectorAll('[data-icon]').forEach(el=>{con
 function icon(name){return '<span class="icon-svg">'+(svgs[name]||svgs.spark)+'</span>'}
 const iconBySection={dining:'utensils',treats:'heart',shopping:'bag',relax:'spark',attractions:'map',tours:'map',nightlife:'spark'};
 function esc(value){return String(value||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
-function card(item,section){
+function card(item,section,index){
   const href=item.href||'#';
   const isMap = href.includes('google.com/maps') || href.includes('maps/search');
   const safeHref=esc(href), safeTitle=esc(item.title);
   const phone=item.phone?'<span class="phone-line">'+icon('phone')+'<span>'+esc(item.phone)+'</span></span>':'';
-  return '<a class="place card click-card" href="'+safeHref+'" target="_blank" rel="noopener noreferrer" aria-label="Open '+safeTitle+'">'+
+  return '<a class="place card click-card" style="--i:'+(index||0)+'" href="'+safeHref+'" target="_blank" rel="noopener noreferrer" aria-label="Open '+safeTitle+'">'+
     '<img class="place-img" src="'+esc(item.img)+'" alt="'+safeTitle+'" loading="lazy">'+
     '<span class="place-content"><span class="icon-bubble">'+icon(iconBySection[section]||'spark')+'</span><span class="place-title-link"><h3>'+safeTitle+'</h3></span>'+
     '<span class="address address-link">'+icon('pin')+'<span>'+esc(item.address)+'</span></span>'+
     phone+'<span class="orange-line"></span><p>'+esc(item.desc)+'</p>'+
     '<span class="map-link">'+icon(isMap?'pin':'globe')+(isMap?'Open map':'Open website')+' →</span></span></a>';
 }
-function render(id,arr,section){const el=document.getElementById(id); if(el) el.innerHTML=arr.map(item=>card(item,section)).join('');}
+function render(id,arr,section){const el=document.getElementById(id); if(el) el.innerHTML=arr.map((item,index)=>card(item,section,index)).join('');}
 render('diningCards',DATA.dining,'dining');render('treatCards',DATA.treats,'treats');render('shoppingCards',DATA.shopping,'shopping');render('relaxCards',DATA.relax,'relax');render('attractions',DATA.attractions,'attractions');render('tours',DATA.tours,'tours');render('nightCards',DATA.nightlife,'nightlife');
 insertIcons();
 
+const revealables=document.querySelectorAll('.quick,.info-card,.family-card,.family-panel,.parking-summary,.place');
+if('IntersectionObserver' in window){
+  const revealObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },{threshold:.16,rootMargin:'0px 0px -8% 0px'});
+  revealables.forEach(el=>revealObserver.observe(el));
+}else{
+  revealables.forEach(el=>el.classList.add('revealed'));
+}
+
+document.querySelectorAll('.contact-photo-stack').forEach(stack=>{
+  const photos=[...stack.querySelectorAll('img')];
+  const cue=stack.querySelector('.photo-click-cue');
+  let cueTarget=photos[0];
+  function moveCue(){
+    if(!cue || !photos.length) return;
+    const frontIndex=Math.max(0,photos.findIndex(photo=>photo.classList.contains('is-front')));
+    cueTarget=photos[(frontIndex+photos.length-1)%photos.length] || photos[0];
+    const stackBox=stack.getBoundingClientRect();
+    const targetBox=cueTarget.getBoundingClientRect();
+    cue.style.left=(targetBox.left-stackBox.left+18)+'px';
+    cue.style.top=(targetBox.top-stackBox.top+18)+'px';
+  }
+  function bringForward(photo){
+    photos.forEach(item=>item.classList.remove('is-front'));
+    photo.classList.add('is-front');
+    requestAnimationFrame(moveCue);
+  }
+  if(photos[1]) photos[1].classList.add('is-front');
+  else if(photos[0]) photos[0].classList.add('is-front');
+  photos.forEach(photo=>{
+    photo.addEventListener('click',()=>{
+      bringForward(photo);
+    });
+  });
+  cue&&cue.addEventListener('click',()=>{
+    bringForward(cueTarget || photos[0]);
+  });
+  window.addEventListener('resize',moveCue);
+  requestAnimationFrame(moveCue);
+});
 
 const nav=[...document.querySelectorAll('.nav button')], pages=[...document.querySelectorAll('.page')];
 function showPage(id){pages.forEach(p=>p.classList.toggle('active',p.id===id));nav.forEach(b=>b.classList.toggle('active',b.dataset.page===id));window.scrollTo({top:0,behavior:'smooth'});}
